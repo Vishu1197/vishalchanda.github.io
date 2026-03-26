@@ -12,7 +12,7 @@ body {
     color: #1e293b;
 }
 
-/* NAVBAR (FIXED) */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -35,10 +35,91 @@ body {
 
 /* CONTENT */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     padding: 60px 20px;
+}
+
+/* TEXT */
+h1, h2 {
     text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* LIST */
+ul {
+    text-align: left;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    margin-top: 70px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+.portfolio-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.portfolio-card p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+/* PUBLICATIONS */
+.publications {
+    margin-top: 70px;
+}
+
+.pub-card {
+    background: rgba(255,255,255,0.7);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.pub-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.pub-card a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
 }
 
 /* MOBILE */
@@ -74,19 +155,100 @@ body {
 
 <div class="container">
 
-<h1>About</h1>
+<h1>About VirexaAnalytics</h1>
 
-<p>
-VirexaAnalytics bridges the gap between bioinformatics data and scientific communication.
+<p class="subtitle">
+Bridging bioinformatics analysis and scientific communication
 </p>
 
 <p>
-We help researchers convert data into publication-ready manuscripts.
+VirexaAnalytics was created to help researchers transform complex experimental and computational data into clear, structured, and publication-ready manuscripts.
 </p>
 
+<ul>
+<li>Bioinformatics analysis (RNA-seq, Microarray)</li>
+<li>Molecular docking & Molecular dynamics simulation</li>
+<li>Drug discovery & ADMET insights</li>
+<li>Scientific writing & manuscript development</li>
+</ul>
+
+<br>
+
+<h2>About Me</h2>
+
 <p>
-PhD Biotechnology researcher specializing in RNA-seq, docking, and computational biology.
+I am a PhD scholar in Biotechnology working in bioinformatics, nano-biotechnology, and virology, with hands-on experience in RNA-seq analysis, molecular docking, and computational biology.
 </p>
+
+<!-- ================= PORTFOLIO ================= -->
+
+<div class="portfolio">
+
+<h2>Case Studies</h2>
+<p class="subtitle">Real research problems transformed into publication-ready outcomes</p>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-card">
+<h3>RNA-seq Analysis – Dengue Study</h3>
+<p><b>Problem:</b> Raw gene expression data lacked interpretation</p>
+<p><b>Approach:</b> DESeq2 + KEGG + immune pathway analysis</p>
+<p><b>Results:</b> Platelet-related gene insights identified</p>
+<p><b>Outcome:</b> Publication-ready results</p>
+<span class="tag">RNA-seq • KEGG</span>
+</div>
+
+<div class="portfolio-card">
+<h3>Molecular Docking</h3>
+<p><b>Problem:</b> No binding clarity for target proteins</p>
+<p><b>Approach:</b> Docking + interaction analysis</p>
+<p><b>Results:</b> High-affinity ligands identified</p>
+<p><b>Outcome:</b> Drug candidates shortlisted</p>
+<span class="tag">Docking</span>
+</div>
+
+<div class="portfolio-card">
+<h3>Molecular Dynamics</h3>
+<p><b>Problem:</b> Docking results lacked validation</p>
+<p><b>Approach:</b> RMSD, RMSF analysis</p>
+<p><b>Results:</b> Stable interaction confirmed</p>
+<p><b>Outcome:</b> Strong computational validation</p>
+<span class="tag">MD Simulation</span>
+</div>
+
+<div class="portfolio-card">
+<h3>Manuscript Writing</h3>
+<p><b>Problem:</b> Data present but unstructured</p>
+<p><b>Approach:</b> Scientific writing + formatting</p>
+<p><b>Results:</b> Clear structured manuscript</p>
+<p><b>Outcome:</b> Ready for journal submission</p>
+<span class="tag">Writing</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= PUBLICATIONS ================= -->
+
+<div class="publications">
+
+<h2>Publications</h2>
+<p class="subtitle">Peer-reviewed and academic contributions</p>
+
+<div class="pub-card">
+<a href="https://link.springer.com/article/10.1007/s13721-025-00670-7" target="_blank">
+Springer Publication – View Article →
+</a>
+</div>
+
+<div class="pub-card">
+<a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003387893-2/obsessive-compulsive-disorder-vishal-chanda-senthilkumar-rajagopal-yuvashree-muralidaran" target="_blank">
+Taylor & Francis Chapter – View Work →
+</a>
+</div>
+
+</div>
 
 </div>
 
