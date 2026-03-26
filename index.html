@@ -3,42 +3,93 @@
 <head>
     <title>VirexaAnalytics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(rgba(30, 20, 10, 0.85), rgba(30, 20, 10, 0.95)),
+                        url('https://images.unsplash.com/photo-1581091012184-5c2c1c3f2c2d');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #f5f5dc;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
             text-align: center;
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+
         h1 {
-            font-size: 42px;
-            color: #38bdf8;
+            font-size: 50px;
+            margin-bottom: 10px;
         }
-        h2 {
-            margin-top: 40px;
-            color: #22c55e;
+
+        .tagline {
+            color: #d6c7a1;
+            font-size: 18px;
         }
-        p {
-            line-height: 1.6;
-        }
+
         .btn {
             display: inline-block;
-            margin: 15px;
+            margin: 10px;
             padding: 12px 25px;
-            background: #22c55e;
-            color: black;
+            background: #d6c7a1;
+            color: #1a120b;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 5px;
             font-weight: bold;
+            transition: 0.3s;
         }
-        .btn.secondary {
-            background: #38bdf8;
+
+        .btn:hover {
+            background: #f5f5dc;
+        }
+
+        .section {
+            margin-top: 60px;
+        }
+
+        h2 {
+            color: #e6d3a3;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: rgba(255, 248, 220, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 248, 220, 0.15);
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        .contact a {
+            color: #d6c7a1;
+            text-decoration: none;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
         }
     </style>
 </head>
@@ -47,38 +98,87 @@
 
 <div class="container">
 
-<h1>VirexaAnalytics</h1>
+    <h1>VirexaAnalytics</h1>
+    <p class="tagline">From Data to Publication</p>
 
-<p><b>From Data to Publication</b></p>
+    <p>
+        Helping life science researchers transform experimental and bioinformatics data into
+        clear, structured, and publication-ready manuscripts.
+    </p>
 
-<p>
-Helping life science researchers transform bioinformatics and experimental data into
-publication-ready manuscripts.
-</p>
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Free Consultation</a>
+    <a href="#" class="btn">View Sample Work</a>
 
-<a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Free Consultation</a>
-<a href="#" class="btn secondary">View Sample Work</a>
+    <!-- SERVICES -->
+    <div class="section">
+        <h2>Services</h2>
 
-<h2>Services</h2>
-<p>
-Manuscript Writing & Editing<br>
-RNA-seq & Microarray Analysis<br>
-Molecular Docking & MD Simulation<br>
-Drug Discovery (ADMET)<br>
-Thesis Support
-</p>
+        <div class="services">
 
-<h2>About</h2>
-<p>
-PhD researcher in Biotechnology with expertise in RNA-seq, bioinformatics,
-and scientific writing. Helping researchers publish with clarity and precision.
-</p>
+            <div class="card">
+                <h3>✍️ Scientific Writing</h3>
+                <ul>
+                    <li>Research articles (original studies)</li>
+                    <li>Review papers</li>
+                    <li>Abstracts, introductions, discussions</li>
+                </ul>
+            </div>
 
-<h2>Contact</h2>
-<p>
-Email: yourmail@gmail.com<br>
-WhatsApp: +91XXXXXXXXXX
-</p>
+            <div class="card">
+                <h3>🧪 Editing & Proofreading</h3>
+                <ul>
+                    <li>Grammar and language correction</li>
+                    <li>Scientific clarity improvement</li>
+                    <li>Journal-specific formatting</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🧬 Bioinformatics Support</h3>
+                <ul>
+                    <li>RNA-seq & microarray interpretation</li>
+                    <li>KEGG & GO analysis</li>
+                    <li>Molecular docking & MD simulation</li>
+                    <li>Drug discovery insights</li>
+                    <li>Data → manuscript conversion</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>📑 Journal Formatting</h3>
+                <ul>
+                    <li>Elsevier, Springer, Wiley formats</li>
+                    <li>Reference styles (APA, Vancouver)</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section">
+        <h2>About Me</h2>
+        <p>
+            I am a PhD researcher in Biotechnology with expertise in RNA-seq analysis,
+            bioinformatics, and scientific writing. I help researchers convert complex datasets
+            into publication-ready manuscripts with clarity and scientific precision.
+        </p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section contact">
+        <h2>Contact</h2>
+        <p>
+            📧 Email: yourmail@gmail.com<br>
+            📱 Phone: +91XXXXXXXXXX<br>
+            📸 Instagram: <a href="#">yourprofile</a><br>
+            💻 GitHub: <a href="#">yourgithub</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2026 VirexaAnalytics | Scientific Writing & Bioinformatics
+    </div>
 
 </div>
 
