@@ -70,31 +70,10 @@
             color: #2563eb;
         }
 
-        /* SERVICES */
+        /* SECTION */
         .section {
             padding: 60px 20px;
             text-align: center;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: left;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
         }
 
         ul {
@@ -116,6 +95,66 @@
             color: #2563eb;
         }
 
+        /* ================= MOBILE RESPONSIVE ================= */
+        @media (max-width: 768px) {
+
+            /* NAVBAR STACK */
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+
+            .nav-links a {
+                display: inline-block;
+                margin: 8px;
+                font-size: 14px;
+            }
+
+            /* HERO */
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero-box {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .subtext {
+                font-size: 14px;
+            }
+
+            /* BUTTON STACK */
+            .btn {
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+                text-align: center;
+            }
+
+            /* ABOUT TEXT */
+            .section {
+                padding: 40px 15px;
+            }
+
+            ul {
+                padding-left: 15px;
+            }
+
+            .about, p {
+                font-size: 14px;
+            }
+        }
+
     </style>
 </head>
 
@@ -125,7 +164,7 @@
 <div class="navbar">
     <b>VirexaAnalytics</b>
     <div class="nav-links">
-       <a href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
@@ -164,42 +203,32 @@
         <li>Supporting researchers in achieving high-quality journal publications</li>
     </ul>
 
-    <!-- WHAT I DO -->
     <h3 style="margin-top:40px;">What I Do</h3>
 
     <ul style="text-align:left; max-width:700px; margin:auto;">
-        <li>Bioinformatics Analysis (RNA-seq, Microarray, Differential Expression)</li>
-        <li>Drug Discovery using Molecular Docking & Molecular Dynamics Simulation</li>
-        <li>ADMET Profiling and Protein–Ligand Interaction Analysis</li>
-        <li>KEGG Pathway & Gene Ontology (GO) Analysis</li>
-        <li>Manuscript Writing (Research & Review Articles)</li>
-        <li>Scientific Editing & Proofreading</li>
+        <li>Bioinformatics Analysis (RNA-seq, Microarray)</li>
+        <li>Molecular Docking & Molecular Dynamics Simulation</li>
+        <li>ADMET Profiling & Drug Discovery Insights</li>
+        <li>KEGG Pathway & Gene Ontology Analysis</li>
+        <li>Manuscript Writing & Editing</li>
     </ul>
 
-    <!-- WHY I STARTED -->
     <h3 style="margin-top:40px;">Why I Started This</h3>
 
     <p style="max-width:700px; margin:auto;">
-        During my research journey, I observed that many researchers generate valuable data
-        but struggle with interpretation, structuring, and presenting their findings effectively.
-        Complex analyses such as RNA-seq, molecular docking, and pathway studies often remain
-        underutilized due to gaps in scientific writing.
-        <br><br>
-        VirexaAnalytics was created to bridge this gap—helping researchers not only analyze their data,
-        but also communicate it with clarity, accuracy, and scientific impact.
+        Many researchers generate valuable data but struggle with interpretation and presentation.
+        VirexaAnalytics was created to bridge this gap and help researchers communicate their findings
+        with clarity and impact.
     </p>
 
-    <!-- ABOUT ME -->
     <h3 style="margin-top:40px;">About Me</h3>
 
     <p style="max-width:700px; margin:auto;">
-        I am a PhD scholar in Biotechnology with expertise in bioinformatics,
-        nano-biotechnology, and virology. My research focuses on understanding complex
-        biological systems using computational and experimental approaches.
-        <br><br>
-        With hands-on experience in RNA-seq analysis, molecular docking, and
-        scientific writing, I aim to help researchers translate their work into
-        meaningful scientific contributions.
+        I am a PhD scholar in Biotechnology working in bioinformatics, nano-biotechnology,
+        and virology, with hands-on experience in RNA-seq and computational biology.
     </p>
 
 </div>
+
+</body>
+</html>
