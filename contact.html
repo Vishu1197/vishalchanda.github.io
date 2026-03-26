@@ -91,8 +91,8 @@ body {
 }
 
 .icon svg {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 }
 
 /* TEXT */
@@ -106,12 +106,12 @@ body {
     margin-top: 5px;
 }
 
-/* PLATFORM COLORS ON HOVER */
-.email:hover .icon { background:#dbeafe; }
-.call:hover .icon { background:#dbeafe; }
-.whatsapp:hover .icon { background:#dcfce7; }
-.github:hover .icon { background:#e5e7eb; }
-.instagram:hover .icon { background:#fce7f3; }
+/* PLATFORM COLORS */
+.email svg { fill:#2563eb; }
+.call svg { fill:#2563eb; }
+.whatsapp svg { fill:#25D366; }
+.github svg { fill:#111827; }
+.instagram svg { fill:#E1306C; }
 
 /* FLOATING WHATSAPP */
 .whatsapp-float {
@@ -128,7 +128,6 @@ body {
     justify-content: center;
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    font-size: 24px;
 }
 
 /* ANIMATION */
@@ -160,7 +159,6 @@ body {
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
 <b>VirexaAnalytics</b>
 <div class="nav-links">
@@ -171,7 +169,6 @@ body {
 </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
 <h1>Contact</h1>
@@ -181,35 +178,55 @@ body {
 
 <!-- EMAIL -->
 <a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
-<div class="icon">📧</div>
+<div class="icon">
+<svg viewBox="0 0 24 24">
+<path d="M2 4h20v16H2z"/><path d="M22 6l-10 7L2 6"/>
+</svg>
+</div>
 <div class="label">Email</div>
 <div class="subtext">Send a detailed query</div>
 </a>
 
 <!-- CALL -->
 <a href="tel:+919148044376" class="contact-card call">
-<div class="icon">📱</div>
+<div class="icon">
+<svg viewBox="0 0 24 24">
+<path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2a1 1 0 011-.2c1.1.4 2.3.6 3.6.6a1 1 0 011 1V20a1 1 0 01-1 1C10 21 3 14 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.3.2 2.5.6 3.6a1 1 0 01-.2 1z"/>
+</svg>
+</div>
 <div class="label">Call</div>
 <div class="subtext">Direct discussion</div>
 </a>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/919148044376" class="contact-card whatsapp">
-<div class="icon">💬</div>
+<div class="icon">
+<svg viewBox="0 0 24 24">
+<path d="M12 2C6.5 2 2 6.5 2 12c0 1.6.4 3.1 1.1 4.5L2 22l5.5-1.4A10 10 0 0012 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+</svg>
+</div>
 <div class="label">WhatsApp</div>
 <div class="subtext">Fastest response</div>
 </a>
 
 <!-- GITHUB -->
 <a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
-<div class="icon">💻</div>
+<div class="icon">
+<svg viewBox="0 0 24 24">
+<path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.8.1 2.4-.1.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.3-5.1-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 .9-.3 3 1.1a10 10 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.3-5.1 5.6.4.3.8 1 .8 2v3c0 .3.2.7.8.6A10.5 10.5 0 0023.5 12C23.5 5.6 18.4.5 12 .5z"/>
+</svg>
+</div>
 <div class="label">GitHub</div>
 <div class="subtext">View projects</div>
 </a>
 
 <!-- INSTAGRAM -->
 <a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
-<div class="icon">📸</div>
+<div class="icon">
+<svg viewBox="0 0 24 24">
+<path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+</svg>
+</div>
 <div class="label">Instagram</div>
 <div class="subtext">Latest updates</div>
 </a>
@@ -218,7 +235,7 @@ body {
 
 </div>
 
-<!-- FLOATING WHATSAPP -->
+<!-- FLOAT -->
 <a href="https://wa.me/919148044376" class="whatsapp-float">💬</a>
 
 </body>
