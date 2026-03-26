@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page</title>
+    <title>About - VirexaAnalytics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            background: #eef2f7;
-            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #eef2f7, #dbeafe);
+            color: #1e293b;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             padding: 20px 40px;
-            background: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.5);
         }
 
         .nav-links a {
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            color: black;
+            color: #1e293b;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: auto;
             padding: 60px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -36,36 +44,30 @@
 <body>
 
 <div class="navbar">
-    <b>VirexaAnalytics</b>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<b>VirexaAnalytics</b>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
 <div class="container">
 
-<h1>PAGE TITLE</h1>
-
-<p><h1>About VirexaAnalytics</h1>
+<h1>About</h1>
 
 <p>
-VirexaAnalytics was founded to bridge the gap between complex biological data
-and scientific communication. Many researchers generate valuable data but face
-challenges in interpretation and manuscript preparation.
+VirexaAnalytics bridges the gap between bioinformatics data and scientific communication.
 </p>
 
 <p>
-With expertise in RNA-seq analysis, bioinformatics, and scientific writing,
-we help transform experimental and computational results into publication-ready manuscripts.
+We help researchers convert data into publication-ready manuscripts.
 </p>
 
 <p>
-Additionally, we support drug discovery through molecular docking, molecular
-dynamics simulations, and ADMET analysis.
-</p></p>
+PhD Biotechnology researcher specializing in RNA-seq, docking, and computational biology.
+</p>
 
 </div>
 
