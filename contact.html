@@ -1,40 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page</title>
+    <title>Contact - VirexaAnalytics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            background: #eef2f7;
-            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #eef2f7, #dbeafe);
+            color: #1e293b;
         }
 
+        /* NAVBAR */
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 40px;
-            background: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
         }
 
         .nav-links a {
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            color: black;
+            color: #1e293b;
+            font-weight: 500;
         }
 
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* MAIN */
         .container {
             max-width: 900px;
             margin: auto;
             padding: 60px 20px;
+            text-align: center;
         }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        /* CONTACT CARDS */
+        .contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #1e293b;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s forwards;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.4s; }
+        .card:nth-child(4) { animation-delay: 0.6s; }
+        .card:nth-child(5) { animation-delay: 0.8s; }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .value {
+            font-size: 14px;
+            color: #475569;
+            margin-top: 5px;
+        }
+
+        /* CTA */
+        .cta {
+            margin-top: 50px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
     <b>VirexaAnalytics</b>
     <div class="nav-links">
@@ -45,17 +132,58 @@
     </div>
 </div>
 
+<!-- CONTENT -->
 <div class="container">
 
-<h1>PAGE TITLE</h1>
+    <h1>Get in Touch</h1>
+    <p class="subtitle">
+        Reach out for manuscript writing, bioinformatics support, or research consultation
+    </p>
 
-<p><h1>Contact</h1>
+    <div class="contacts">
 
-<p>Email: vishalchanda.reva@gmail.com</p>
-<p>Phone: +91-91480 44376</p>
-<p>WhatsApp: <a href="https://wa.me/919148044376">Click Here</a></p>
-<p>GitHub: <a href="#"></a>https://github.com/Vishu1197</p>
-<p>Instagram: <a href="#">https://www.instagram.com/virexaanalytics/</a></p></p>
+        <!-- EMAIL -->
+        <a href="mailto:vishalchanda.reva@gmail.com" class="card">
+            <div class="icon">📧</div>
+            <div class="label">Email</div>
+            <div class="value">vishalchanda.reva@gmail.com</div>
+        </a>
+
+        <!-- PHONE -->
+        <a href="tel:+919148044376" class="card">
+            <div class="icon">📱</div>
+            <div class="label">Call</div>
+            <div class="value">+91 91480 44376</div>
+        </a>
+
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/919148044376" class="card">
+            <div class="icon">💬</div>
+            <div class="label">WhatsApp</div>
+            <div class="value">Start Chat</div>
+        </a>
+
+        <!-- GITHUB -->
+        <a href="https://github.com/Vishu1197" target="_blank" class="card">
+            <div class="icon">💻</div>
+            <div class="label">GitHub</div>
+            <div class="value">View Projects</div>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/virexaanalytics/" target="_blank" class="card">
+            <div class="icon">📸</div>
+            <div class="label">Instagram</div>
+            <div class="value">@virexaanalytics</div>
+        </a>
+
+    </div>
+
+    <div class="cta">
+        <a href="https://wa.me/919148044376" class="btn">
+            Start Consultation
+        </a>
+    </div>
 
 </div>
 
