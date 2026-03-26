@@ -11,11 +11,19 @@ body {
     background: linear-gradient(120deg, #eef2f7, #dbeafe);
 }
 
+/* NAVBAR (FIXED) */
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
     background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
@@ -24,6 +32,7 @@ body {
     color: #1e293b;
 }
 
+/* CONTENT */
 .container {
     text-align: center;
     padding: 60px 20px;
@@ -36,14 +45,23 @@ body {
     color: #2563eb;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 8px;
     }
 }
 </style>
-
 </head>
 
 <body>
