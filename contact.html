@@ -1,193 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact - VirexaAnalytics</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - VirexaAnalytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(120deg, #eef2f7, #dbeafe);
-            color: #1e293b;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #eef2f7, #dbeafe);
+}
 
-        /* NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(10px);
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.5);
+}
 
-        .nav-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1e293b;
-            font-weight: 500;
-        }
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e293b;
+}
 
-        .nav-links a:hover {
-            color: #2563eb;
-        }
+.container {
+    text-align: center;
+    padding: 60px 20px;
+}
 
-        /* MAIN */
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
+.contact a {
+    display: block;
+    margin: 10px;
+    text-decoration: none;
+    color: #2563eb;
+}
 
-        h1 {
-            font-size: 36px;
-        }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
 
-        .subtitle {
-            color: #64748b;
-            margin-bottom: 40px;
-        }
-
-        /* CONTACT CARDS */
-        .contacts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: #1e293b;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 0.8s forwards;
-        }
-
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.4s; }
-        .card:nth-child(4) { animation-delay: 0.6s; }
-        .card:nth-child(5) { animation-delay: 0.8s; }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .label {
-            font-weight: bold;
-        }
-
-        .value {
-            font-size: 14px;
-            color: #475569;
-            margin-top: 5px;
-        }
-
-        /* CTA */
-        .cta {
-            margin-top: 50px;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            background: #2563eb;
-            color: white;
-        }
-
-        /* ANIMATION */
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-    </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
-    <b>VirexaAnalytics</b>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<b>VirexaAnalytics</b>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
-<!-- CONTENT -->
-<div class="container">
+<div class="container contact">
 
-    <h1>Get in Touch</h1>
-    <p class="subtitle">
-        Reach out for manuscript writing, bioinformatics support, or research consultation
-    </p>
+<h1>Contact</h1>
 
-    <div class="contacts">
-
-        <!-- EMAIL -->
-        <a href="mailto:vishalchanda.reva@gmail.com" class="card">
-            <div class="icon">📧</div>
-            <div class="label">Email</div>
-            <div class="value">vishalchanda.reva@gmail.com</div>
-        </a>
-
-        <!-- PHONE -->
-        <a href="tel:+919148044376" class="card">
-            <div class="icon">📱</div>
-            <div class="label">Call</div>
-            <div class="value">+91 91480 44376</div>
-        </a>
-
-        <!-- WHATSAPP -->
-        <a href="https://wa.me/919148044376" class="card">
-            <div class="icon">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="#25D366">
-        <path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.894.757 5.72 2.196 8.21L0 32l7.596-2.146A15.935 15.935 0 0016 32c8.837 0 16-7.164 16-16.004C32 7.56 24.837.396 16 .396zm0 29.244c-2.527 0-4.997-.665-7.165-1.926l-.512-.303-4.506 1.27 1.204-4.388-.333-.536a13.28 13.28 0 01-2.052-7.158c0-7.36 5.987-13.348 13.364-13.348 3.566 0 6.918 1.39 9.438 3.912a13.3 13.3 0 013.914 9.436c-.002 7.36-5.99 13.348-13.35 13.348zm7.384-9.995c-.404-.202-2.39-1.18-2.76-1.316-.37-.134-.64-.202-.91.202-.27.404-1.045 1.316-1.282 1.586-.236.27-.472.303-.876.101-.404-.202-1.706-.63-3.25-2.01-1.2-1.07-2.01-2.39-2.245-2.795-.236-.404-.025-.623.177-.825.182-.181.404-.472.606-.708.202-.236.27-.404.404-.674.135-.27.067-.505-.034-.708-.101-.202-.91-2.197-1.247-3.01-.328-.79-.662-.682-.91-.694l-.775-.014c-.27 0-.708.101-1.078.505s-1.414 1.382-1.414 3.368c0 1.986 1.448 3.905 1.65 4.175.202.27 2.85 4.352 6.908 6.1.966.417 1.718.666 2.305.852.968.308 1.85.265 2.547.161.777-.116 2.39-.976 2.73-1.92.337-.943.337-1.75.236-1.92-.101-.168-.37-.27-.775-.472z"/>
-    </svg>
-</div>
-            <div class="label">WhatsApp</div>
-            <div class="value">Start Chat</div>
-        </a>
-
-        <!-- GITHUB -->
-        <a href="https://github.com/Vishu1197" target="_blank" class="card">
-            <div class="icon">💻</div>
-            <div class="label">GitHub</div>
-            <div class="value">View Projects</div>
-        </a>
-
-        <!-- INSTAGRAM -->
-        <a href="https://www.instagram.com/virexaanalytics/" target="_blank" class="card">
-            <div class="icon">📸</div>
-            <div class="label">Instagram</div>
-            <div class="value">@virexaanalytics</div>
-        </a>
-
-    </div>
-
-    <div class="cta">
-        <a href="https://wa.me/919148044376" class="btn">
-            Start Consultation
-        </a>
-    </div>
+<a href="mailto:vishalchanda.reva@gmail.com">📧 Email</a>
+<a href="tel:+919148044376">📱 Call</a>
+<a href="https://wa.me/919148044376">💬 WhatsApp</a>
+<a href="https://github.com/Vishu1197">💻 GitHub</a>
+<a href="https://instagram.com/virexaanalytics">📸 Instagram</a>
 
 </div>
 
