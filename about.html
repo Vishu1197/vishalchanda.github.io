@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About - VirexaAnalytics</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - VirexaAnalytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(120deg, #eef2f7, #dbeafe);
-            color: #1e293b;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #eef2f7, #dbeafe);
+    color: #1e293b;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 40px;
-            background: rgba(255,255,255,0.5);
-        }
+/* NAVBAR (FIXED) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
 
-        .nav-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1e293b;
-        }
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e293b;
+}
 
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+/* CONTENT */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 8px;
+    }
+}
+</style>
 </head>
 
 <body>
