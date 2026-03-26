@@ -8,178 +8,206 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(rgba(30, 20, 10, 0.85), rgba(30, 20, 10, 0.95)),
-                        url('https://images.unsplash.com/photo-1581091012184-5c2c1c3f2c2d');
-            background-size: cover;
-            background-attachment: fixed;
-            color: #f5f5dc;
+            background: linear-gradient(120deg, #eef2f7, #dbeafe);
+            color: #1e293b;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 50px 20px;
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #1e293b;
+            font-size: 14px;
+        }
+
+        /* HERO */
+        .hero {
             text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-box {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: auto;
         }
 
         h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
+            font-size: 36px;
         }
 
-        .tagline {
-            color: #d6c7a1;
-            font-size: 18px;
+        .subtext {
+            margin: 15px 0;
+            color: #475569;
         }
 
         .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 25px;
-            background: #d6c7a1;
-            color: #1a120b;
+            padding: 12px 22px;
+            border-radius: 6px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
+            margin: 10px;
+            display: inline-block;
         }
 
-        .btn:hover {
-            background: #f5f5dc;
+        .primary {
+            background: #2563eb;
+            color: white;
         }
 
+        .secondary {
+            border: 1px solid #2563eb;
+            color: #2563eb;
+        }
+
+        /* SERVICES */
         .section {
-            margin-top: 60px;
-        }
-
-        h2 {
-            color: #e6d3a3;
+            padding: 60px 20px;
+            text-align: center;
         }
 
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
             gap: 20px;
-            margin-top: 30px;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .card {
-            background: rgba(255, 248, 220, 0.08);
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-align: left;
             transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 248, 220, 0.15);
         }
 
         ul {
             padding-left: 18px;
         }
 
-        .contact a {
-            color: #d6c7a1;
-            text-decoration: none;
+        /* ABOUT */
+        .about {
+            max-width: 700px;
+            margin: auto;
+            color: #475569;
         }
 
-        .footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #aaa;
+        /* CONTACT */
+        .contact a {
+            display: block;
+            margin: 5px;
+            text-decoration: none;
+            color: #2563eb;
         }
+
     </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
+<div class="navbar">
+    <b>VirexaAnalytics</b>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
 
-    <h1>VirexaAnalytics</h1>
-    <p class="tagline">From Data to Publication</p>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-box">
+        <h1>From Data to Publication</h1>
 
-    <p>
-        Helping life science researchers transform experimental and bioinformatics data into
-        clear, structured, and publication-ready manuscripts.
-    </p>
+        <p class="subtext">
+            Helping life science researchers transform RNA-seq, docking, and experimental data
+            into publication-ready manuscripts.
+        </p>
 
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Free Consultation</a>
-    <a href="#" class="btn">View Sample Work</a>
+        <a href="https://wa.me/91XXXXXXXXXX" class="btn primary">Get Consultation</a>
+        <a href="#" class="btn secondary">View Work</a>
+    </div>
+</div>
 
-    <!-- SERVICES -->
-    <div class="section">
-        <h2>Services</h2>
+<!-- SERVICES -->
+<div class="section" id="services">
+    <h2>Services</h2>
 
-        <div class="services">
+    <div class="services">
 
-            <div class="card">
-                <h3>✍️ Scientific Writing</h3>
-                <ul>
-                    <li>Research articles (original studies)</li>
-                    <li>Review papers</li>
-                    <li>Abstracts, introductions, discussions</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>🧪 Editing & Proofreading</h3>
-                <ul>
-                    <li>Grammar and language correction</li>
-                    <li>Scientific clarity improvement</li>
-                    <li>Journal-specific formatting</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>🧬 Bioinformatics Support</h3>
-                <ul>
-                    <li>RNA-seq & microarray interpretation</li>
-                    <li>KEGG & GO analysis</li>
-                    <li>Molecular docking & MD simulation</li>
-                    <li>Drug discovery insights</li>
-                    <li>Data → manuscript conversion</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>📑 Journal Formatting</h3>
-                <ul>
-                    <li>Elsevier, Springer, Wiley formats</li>
-                    <li>Reference styles (APA, Vancouver)</li>
-                </ul>
-            </div>
-
+        <div class="card">
+            <b>Scientific Writing</b>
+            <ul>
+                <li>Research articles</li>
+                <li>Review papers</li>
+                <li>Manuscript sections</li>
+            </ul>
         </div>
-    </div>
 
-    <!-- ABOUT -->
-    <div class="section">
-        <h2>About Me</h2>
-        <p>
-            I am a PhD researcher in Biotechnology with expertise in RNA-seq analysis,
-            bioinformatics, and scientific writing. I help researchers convert complex datasets
-            into publication-ready manuscripts with clarity and scientific precision.
-        </p>
-    </div>
+        <div class="card">
+            <b>Editing & Proofreading</b>
+            <ul>
+                <li>Grammar correction</li>
+                <li>Scientific clarity</li>
+                <li>Journal formatting</li>
+            </ul>
+        </div>
 
-    <!-- CONTACT -->
-    <div class="section contact">
-        <h2>Contact</h2>
-        <p>
-            📧 Email: yourmail@gmail.com<br>
-            📱 Phone: +91XXXXXXXXXX<br>
-            📸 Instagram: <a href="#">yourprofile</a><br>
-            💻 GitHub: <a href="#">yourgithub</a>
-        </p>
-    </div>
+        <div class="card">
+            <b>Bioinformatics</b>
+            <ul>
+                <li>RNA-seq & Microarray</li>
+                <li>KEGG & GO</li>
+                <li>Docking & MD</li>
+            </ul>
+        </div>
 
-    <div class="footer">
-        © 2026 VirexaAnalytics | Scientific Writing & Bioinformatics
-    </div>
+        <div class="card">
+            <b>Journal Formatting</b>
+            <ul>
+                <li>Elsevier / Springer</li>
+                <li>APA / Vancouver</li>
+            </ul>
+        </div>
 
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+    <h2>About</h2>
+    <p class="about">
+        PhD researcher in Biotechnology specializing in RNA-seq analysis,
+        bioinformatics, and scientific writing. Helping researchers publish
+        with clarity and precision.
+    </p>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact" id="contact">
+    <h2>Contact</h2>
+    <a href="mailto:yourmail@gmail.com">Email</a>
+    <a href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+    <a href="#">GitHub</a>
+    <a href="#">Instagram</a>
 </div>
 
 </body>
