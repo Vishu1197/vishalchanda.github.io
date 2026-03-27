@@ -1,232 +1,259 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VirexaAnalytics</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VirexaAnalytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(120deg, #eef2f7, #dbeafe);
-            color: #1e293b;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #eef2f7, #dbeafe);
+    color: #1e293b;
+}
 
-        /* NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 40px;
-            background: rgba(255,255,255,0.5);
-            backdrop-filter: blur(10px);
-        }
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
 
-        .nav-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1e293b;
-            font-size: 14px;
-        }
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e293b;
+}
 
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
 
-        .hero-box {
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(15px);
-            padding: 50px;
-            border-radius: 15px;
-            max-width: 700px;
-            margin: auto;
-        }
+.hero-box {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: auto;
+}
 
-        h1 {
-            font-size: 36px;
-        }
+h1 {
+    font-size: 36px;
+}
 
-        .subtext {
-            margin: 15px 0;
-            color: #475569;
-        }
+.subtext {
+    margin: 15px 0;
+    color: #475569;
+}
 
-        .btn {
-            padding: 12px 22px;
-            border-radius: 6px;
-            text-decoration: none;
-            margin: 10px;
-            display: inline-block;
-        }
+.btn {
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+}
 
-        .primary {
-            background: #2563eb;
-            color: white;
-        }
+.primary {
+    background: #2563eb;
+    color: white;
+}
 
-        .secondary {
-            border: 1px solid #2563eb;
-            color: #2563eb;
-        }
+.secondary {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+}
 
-        /* SECTION */
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-        }
+/* TRUST SECTION */
+.trust {
+    text-align: center;
+    padding: 40px 20px;
+    font-weight: 500;
+}
 
-        ul {
-            padding-left: 18px;
-        }
+/* SERVICES PREVIEW */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
 
-        /* ABOUT */
-        .about {
-            max-width: 700px;
-            margin: auto;
-            color: #475569;
-        }
+.card {
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+}
 
-        /* CONTACT */
-        .contact a {
-            display: block;
-            margin: 5px;
-            text-decoration: none;
-            color: #2563eb;
-        }
+/* PUBLICATIONS */
+.publications {
+    padding: 60px 20px;
+    text-align: center;
+}
 
-        /* ================= MOBILE RESPONSIVE ================= */
-        @media (max-width: 768px) {
+.pub-card {
+    background: rgba(255,255,255,0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+}
 
-            /* NAVBAR STACK */
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-                padding: 15px;
-                text-align: center;
-            }
+.pub-card a {
+    text-decoration: none;
+    color: #2563eb;
+}
 
-            .nav-links {
-                margin-top: 10px;
-            }
+/* TESTIMONIALS */
+.testimonials {
+    padding: 60px 20px;
+    text-align: center;
+}
 
-            .nav-links a {
-                display: inline-block;
-                margin: 8px;
-                font-size: 14px;
-            }
+.testimonial {
+    max-width: 600px;
+    margin: auto;
+    font-style: italic;
+}
 
-            /* HERO */
-            .hero {
-                padding: 60px 15px;
-            }
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+}
 
-            .hero-box {
-                padding: 25px;
-            }
+.cta-btn {
+    padding: 14px 30px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
 
-            h1 {
-                font-size: 26px;
-            }
+/* MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            .subtext {
-                font-size: 14px;
-            }
+    .hero {
+        padding: 60px 15px;
+    }
 
-            /* BUTTON STACK */
-            .btn {
-                display: block;
-                width: 90%;
-                margin: 10px auto;
-                text-align: center;
-            }
+    h1 {
+        font-size: 26px;
+    }
 
-            /* ABOUT TEXT */
-            .section {
-                padding: 40px 15px;
-            }
-
-            ul {
-                padding-left: 15px;
-            }
-
-            .about, p {
-                font-size: 14px;
-            }
-        }
-
-    </style>
+    .btn {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <b>VirexaAnalytics</b>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<b>VirexaAnalytics</b>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-    <div class="hero-box">
-        <h1>From Data to Publication</h1>
+<div class="hero-box">
 
-        <p class="subtext">
-            Helping life science researchers transform RNA-seq, docking, and experimental data
-            into publication-ready manuscripts.
-        </p>
+<h1>From Data to Publication</h1>
 
-        <a href="https://wa.me/91XXXXXXXXXX" class="btn primary">Get Consultation</a>
-        <a href="#" class="btn secondary">View Work</a>
-    </div>
+<p class="subtext">
+Transforming RNA-seq, docking, and experimental data into publication-ready research
+</p>
+
+<a href="https://wa.me/919148044376" class="btn primary">Get Free Consultation</a>
+<a href="#publications" class="btn secondary">View Work</a>
+
+</div>
 </div>
 
-<!-- ABOUT -->
-<div class="section" id="about">
+<!-- TRUST -->
+<div class="trust">
+PhD Biotechnology Expert • RNA-seq • Molecular Docking • MD Simulation • Scientific Writing
+</div>
 
-    <h2>About VirexaAnalytics</h2>
+<!-- SERVICES PREVIEW -->
+<div class="services">
 
-    <p>
-        VirexaAnalytics was founded to bridge the gap between complex biological data
-        and scientific communication, helping researchers transform their work into
-        clear, structured, and publication-ready manuscripts.
-    </p>
+<div class="card">
+<h3>Scientific Writing</h3>
+<p>Research papers, reviews, and publication-ready manuscripts</p>
+</div>
 
-    <ul style="text-align:left; max-width:700px; margin:auto;">
-        <li>Transforming raw experimental and computational data into publishable research</li>
-        <li>Combining bioinformatics expertise with scientific writing</li>
-        <li>Supporting researchers in achieving high-quality journal publications</li>
-    </ul>
+<div class="card">
+<h3>Bioinformatics</h3>
+<p>RNA-seq, microarray, pathway analysis (KEGG, GO)</p>
+</div>
 
-    <h3 style="margin-top:40px;">What I Do</h3>
+<div class="card">
+<h3>Drug Discovery</h3>
+<p>Molecular docking, MD simulation, ADMET insights</p>
+</div>
 
-    <ul style="text-align:left; max-width:700px; margin:auto;">
-        <li>Bioinformatics Analysis (RNA-seq, Microarray)</li>
-        <li>Molecular Docking & Molecular Dynamics Simulation</li>
-        <li>ADMET Profiling & Drug Discovery Insights</li>
-        <li>KEGG Pathway & Gene Ontology Analysis</li>
-        <li>Manuscript Writing & Editing</li>
-    </ul>
+</div>
 
-    <h3 style="margin-top:40px;">Why I Started This</h3>
+<!-- PUBLICATIONS (CONNECTED TO VIEW WORK BUTTON) -->
+<div class="publications" id="publications">
 
-    <p style="max-width:700px; margin:auto;">
-        Many researchers generate valuable data but struggle with interpretation and presentation.
-        VirexaAnalytics was created to bridge this gap and help researchers communicate their findings
-        with clarity and impact.
-    </p>
+<h2>Publications</h2>
 
-    <h3 style="margin-top:40px;">About Me</h3>
+<div class="pub-card">
+<a href="https://link.springer.com/article/10.1007/s13721-025-00670-7" target="_blank">
+Springer Publication – View Article →
+</a>
+</div>
 
-    <p style="max-width:700px; margin:auto;">
-        I am a PhD scholar in Biotechnology working in bioinformatics, nano-biotechnology,
-        and virology, with hands-on experience in RNA-seq and computational biology.
-    </p>
+<div class="pub-card">
+<a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003387893-2/obsessive-compulsive-disorder-vishal-chanda-senthilkumar-rajagopal-yuvashree-muralidaran" target="_blank">
+Taylor & Francis Chapter – View Work →
+</a>
+</div>
+
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="testimonials">
+
+<h2>What Researchers Say</h2>
+
+<p class="testimonial">
+"The bioinformatics analysis and manuscript writing significantly improved our publication quality."
+</p>
+
+</div>
+
+<!-- CTA -->
+<div class="cta">
+
+<h2>Ready to Publish Your Research?</h2>
+
+<a href="https://wa.me/919148044376" class="cta-btn">
+Start Your Project
+</a>
 
 </div>
 
