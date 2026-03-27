@@ -1,120 +1,245 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Services - VirexaAnalytics</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - VirexaAnalytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(120deg, #eef2f7, #dbeafe);
-            color: #1e293b;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #eef2f7, #dbeafe);
+    color: #1e293b;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 40px;
-            background: rgba(255,255,255,0.5);
-            backdrop-filter: blur(10px);
-        }
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(10px);
+}
 
-        .nav-links a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1e293b;
-            font-size: 14px;
-        }
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e293b;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-        .card {
-            background: rgba(255,255,255,0.6);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: left;
-        }
+.hero h1 {
+    font-size: 34px;
+}
 
-        .price {
-            color: #2563eb;
-            font-weight: bold;
-        }
+.subtitle {
+    color: #64748b;
+    margin-top: 10px;
+}
 
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-                padding: 15px;
-            }
+/* SECTION */
+.section {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
 
-            .nav-links a {
-                display: inline-block;
-                margin: 8px;
-            }
+.section p {
+    text-align: justify;
+    line-height: 1.7;
+}
 
-            .services {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+/* SERVICE BLOCK */
+.service-block {
+    margin-top: 20px;
+}
+
+.service-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.service-desc {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* LIST */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 8px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <div class="navbar">
-    <b>VirexaAnalytics</b>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+<b>VirexaAnalytics</b>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
 <div class="container">
 
-<h1>Services</h1>
-
-<div class="services">
-
-<div class="card">
-<h3>✍️ Scientific Writing</h3>
-<p>Research articles, review papers, abstracts, discussions</p>
-<p class="price">₹1 – ₹3 per word</p>
+<!-- HERO -->
+<div class="hero">
+<h1>Our Services</h1>
+<p class="subtitle">
+End-to-End Computational Biology & Research Solutions
+</p>
 </div>
 
-<div class="card">
-<h3>🧪 Editing & Proofreading</h3>
-<p>Grammar, clarity, formatting</p>
-<p class="price">₹1 – ₹3 per word</p>
+<!-- INTRO -->
+<div class="section">
+<p>
+We offer integrated scientific services designed to move your research from <b>raw data to meaningful discovery</b> — with clarity, accuracy, and real-world relevance.
+</p>
 </div>
 
-<div class="card">
-<h3>🧬 Bioinformatics</h3>
-<p>RNA-seq, docking, MD simulation</p>
-<p class="price">₹2000 – ₹7000</p>
+<!-- BIOINFORMATICS -->
+<div class="section">
+<div class="service-title">🧬 Bioinformatics & Data Analysis</div>
+
+<p class="service-desc">
+Transform complex biological datasets into clear, interpretable insights.
+</p>
+
+<ul>
+<li>RNA-seq & microarray analysis</li>
+<li>Differential gene expression (DESeq2, limma)</li>
+<li>Pathway & functional enrichment analysis</li>
+<li>Data visualization & biological interpretation</li>
+</ul>
+
+<p><b>Ideal for:</b> Researchers working with high-throughput datasets needing reliable and publication-ready results</p>
 </div>
 
-<div class="card">
-<h3>📑 Formatting</h3>
-<p>Elsevier, Springer, APA</p>
-<p class="price">₹1000</p>
+<!-- MOLECULAR -->
+<div class="section">
+<div class="service-title">⚛️ Molecular Modeling & Simulation</div>
+
+<p class="service-desc">
+Understand molecular interactions with precision and confidence.
+</p>
+
+<ul>
+<li>Protein–ligand docking studies</li>
+<li>Molecular dynamics simulations (GROMACS)</li>
+<li>Stability analysis (RMSD, RMSF, PCA)</li>
+<li>Binding interaction and affinity evaluation</li>
+</ul>
+
+<p><b>Ideal for:</b> Drug discovery and structural biology projects requiring validated computational insights</p>
 </div>
 
+<!-- AI -->
+<div class="section">
+<div class="service-title">🤖 AI-Driven Drug Discovery</div>
+
+<p class="service-desc">
+Leverage machine learning to accelerate therapeutic discovery.
+</p>
+
+<ul>
+<li>Predictive modeling for ligand screening</li>
+<li>Feature engineering and dataset optimization</li>
+<li>Hybrid ML approaches for improved accuracy</li>
+<li>Data-driven candidate prioritization</li>
+</ul>
+
+<p><b>Ideal for:</b> Teams aiming to reduce experimental workload and improve hit selection efficiency</p>
+</div>
+
+<!-- WRITING -->
+<div class="section">
+<div class="service-title">✍️ Scientific Writing & Research Support</div>
+
+<p class="service-desc">
+Turn your research into impactful, publication-ready work.
+</p>
+
+<ul>
+<li>Manuscript writing & editing</li>
+<li>Research structuring and result interpretation</li>
+<li>Figure preparation & data presentation</li>
+<li>Journal submission support</li>
+</ul>
+
+<p><b>Ideal for:</b> Researchers aiming to publish with clarity, precision, and strong scientific narrative</p>
+</div>
+
+<!-- APPROACH -->
+<div class="section">
+<h2>Our Service Approach</h2>
+
+<ul>
+<li>✔ Clear communication of findings</li>
+<li>✔ Biologically meaningful interpretations</li>
+<li>✔ Research aligned with real-world applications</li>
+</ul>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Let’s Work Together</h2>
+
+<p>
+Whether you're analyzing data, validating a hypothesis, or building a discovery pipeline — we’re here to support your research at every stage.
+</p>
+
+<a href="contact.html" class="cta-btn">
+Get in Touch
+</a>
 </div>
 
 </div>
