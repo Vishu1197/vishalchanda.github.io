@@ -3,9 +3,7 @@
 <head>
 <title>Contact - VirexaAnalytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <script src="https://unpkg.com/lucide@latest"></script>
-
 <style>
 body {
     margin: 0;
@@ -23,9 +21,7 @@ body {
     background: rgba(255,255,255,0.5);
     backdrop-filter: blur(10px);
 }
-
 .nav-links { display: flex; }
-
 .nav-links a {
     margin: 0 15px;
     text-decoration: none;
@@ -38,7 +34,6 @@ body {
     text-align: center;
     padding: 60px 20px;
 }
-
 .subtitle {
     color: #64748b;
     margin-top: 10px;
@@ -66,18 +61,16 @@ body {
     transform: translateY(30px);
     animation: fadeUp 0.8s forwards;
 }
-
 .contact-card:nth-child(2){animation-delay:0.2s;}
 .contact-card:nth-child(3){animation-delay:0.4s;}
 .contact-card:nth-child(4){animation-delay:0.6s;}
 .contact-card:nth-child(5){animation-delay:0.8s;}
-
 .contact-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* ICON */
+/* ICON CIRCLE */
 .icon {
     width: 65px;
     height: 65px;
@@ -89,27 +82,29 @@ body {
     background: #f1f5f9;
     transition: 0.3s;
 }
-
 .icon svg {
     width: 28px;
     height: 28px;
+    fill: none;
     stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-/* COLORS */
-.email svg { stroke:#2563eb; }
-.call svg { stroke:#2563eb; }
+/* Email & Call — solid colors via CSS (Lucide is fine for these) */
+.email .icon svg { stroke: #2563eb; }
+.call  .icon svg { stroke: #2563eb; }
 
-/* HOVER GLOW */
+/* GLOW EFFECTS */
 .contact-card:hover .icon { transform: scale(1.1); }
-.email:hover .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
-.call:hover .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
-.whatsapp:hover .icon { box-shadow: 0 0 20px rgba(37,211,102,0.5); }
-.github:hover .icon { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
+.email:hover     .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+.call:hover      .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+.whatsapp:hover  .icon { box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+.github:hover    .icon { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
 .instagram:hover .icon { box-shadow: 0 0 25px rgba(221,42,123,0.5); }
 
 /* TEXT */
-.label { font-weight: 600; }
+.label   { font-weight: 600; }
 .subtext { font-size: 13px; color: #64748b; margin-top: 5px; }
 
 /* FLOAT BUTTON */
@@ -127,7 +122,10 @@ body {
     justify-content: center;
     text-decoration: none;
     font-size: 24px;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+    transition: transform 0.2s;
 }
+.whatsapp-float:hover { transform: scale(1.1); }
 
 /* ANIMATION */
 @keyframes fadeUp {
@@ -142,72 +140,115 @@ body {
 }
 </style>
 </head>
-
 <body>
 
 <div class="navbar">
-<b>VirexaAnalytics</b>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
+  <b>VirexaAnalytics</b>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </div>
 
 <div class="container">
+  <h1>Contact</h1>
+  <p class="subtitle">Reach out for research support, writing, or collaboration</p>
 
-<h1>Contact</h1>
-<p class="subtitle">Reach out for research support, writing, or collaboration</p>
+  <div class="contact-grid">
 
-<div class="contact-grid">
+    <!-- EMAIL — Lucide, solid color via CSS -->
+    <a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
+      <div class="icon"><i data-lucide="mail"></i></div>
+      <div class="label">Email</div>
+      <div class="subtext">Send a detailed query</div>
+    </a>
 
-<!-- EMAIL -->
-<a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
-<div class="icon"><i data-lucide="mail"></i></div>
-<div class="label">Email</div>
-<div class="subtext">Send a detailed query</div>
-</a>
+    <!-- CALL — Lucide, solid color via CSS -->
+    <a href="tel:+919148044376" class="contact-card call">
+      <div class="icon"><i data-lucide="phone"></i></div>
+      <div class="label">Call</div>
+      <div class="subtext">Direct discussion</div>
+    </a>
 
-<!-- CALL -->
-<a href="tel:+919148044376" class="contact-card call">
-<div class="icon"><i data-lucide="phone"></i></div>
-<div class="label">Call</div>
-<div class="subtext">Direct discussion</div>
-</a>
+    <!-- WHATSAPP — self-contained inline SVG; gradient defined + used inside the same <svg> -->
+    <a href="https://wa.me/919148044376" class="contact-card whatsapp">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="waGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#25D366"/>
+              <stop offset="100%" stop-color="#128C7E"/>
+            </linearGradient>
+          </defs>
+          <path stroke="url(#waGrad)" stroke-width="1.8"
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7
+               8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8
+               8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5
+               a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+      </div>
+      <div class="label">WhatsApp</div>
+      <div class="subtext">Fastest response</div>
+    </a>
 
-<!-- WHATSAPP (FIXED + AUTO MESSAGE) -->
-<a href="https://wa.me/919148044376?text=Hello%2C%20I%20came%20across%20VirexaAnalytics%20and%20I%20am%20interested%20in%20your%20services.%0A%0APlease%20select%20one%20of%20the%20following%20and%20send%20the%20message%3A%0A%0A1.%20Manuscript%20Writing%20%2F%20Editing%20Support%0A2.%20Bioinformatics%20Analysis%20(RNA-seq%20%2F%20Docking)%0A%0AI%20would%20like%20help%20with%3A%20%5BDelete%20one%20option%5D%0A%E2%9C%85%20Manuscript%20Writing%20%2F%20Editing%0A%E2%9C%85%20Bioinformatics%20Analysis%0A%0APlease%20guide%20me%20on%20the%20next%20steps." class="contact-card whatsapp">
+    <!-- GITHUB — self-contained inline SVG; gradient defined + used inside the same <svg> -->
+    <a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ghGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4b5563"/>
+              <stop offset="100%" stop-color="#111827"/>
+            </linearGradient>
+          </defs>
+          <path stroke="url(#ghGrad)" stroke-width="1.8"
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61
+               c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77
+               5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0
+               C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77
+               a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7
+               A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </div>
+      <div class="label">GitHub</div>
+      <div class="subtext">View projects</div>
+    </a>
 
-<div class="icon"><i data-lucide="message-circle"></i></div>
-<div class="label">WhatsApp</div>
-<div class="subtext">Fastest response</div>
+    <!-- INSTAGRAM — self-contained inline SVG; gradient defined + used inside the same <svg> -->
+    <a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#f58529"/>
+              <stop offset="50%"  stop-color="#dd2a7b"/>
+              <stop offset="100%" stop-color="#8134af"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer rounded square -->
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#igGrad)" stroke-width="1.8"/>
+          <!-- Lens circle -->
+          <circle cx="12" cy="12" r="4" stroke="url(#igGrad)" stroke-width="1.8"/>
+          <!-- Dot — filled directly, no stroke needed -->
+          <circle cx="17.5" cy="6.5" r="1" fill="#dd2a7b"/>
+        </svg>
+      </div>
+      <div class="label">Instagram</div>
+      <div class="subtext">Latest updates</div>
+    </a>
 
-</a>
-
-<!-- GITHUB -->
-<a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
-<div class="icon"><i data-lucide="github"></i></div>
-<div class="label">GitHub</div>
-<div class="subtext">View projects</div>
-</a>
-
-<!-- INSTAGRAM -->
-<a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
-<div class="icon"><i data-lucide="instagram"></i></div>
-<div class="label">Instagram</div>
-<div class="subtext">Latest updates</div>
-</a>
-
+  </div>
 </div>
-</div>
 
-<!-- FLOAT BUTTON (WITH MESSAGE) -->
-<a href="https://wa.me/919148044376?text=Hello%2C%20I%20came%20across%20VirexaAnalytics%20and%20I%20am%20interested%20in%20your%20services.%20Please%20guide%20me." class="whatsapp-float">💬</a>
+<a href="https://wa.me/919148044376" class="whatsapp-float">💬</a>
 
 <script>
-lucide.createIcons();
+  lucide.createIcons();
 </script>
-
 </body>
 </html>
