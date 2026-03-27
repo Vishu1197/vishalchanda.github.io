@@ -16,14 +16,9 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px 40px;
     background: rgba(255,255,255,0.5);
     backdrop-filter: blur(10px);
-}
-
-.nav-links {
-    display: flex;
 }
 
 .nav-links a {
@@ -34,114 +29,134 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 60px 20px;
 }
 
-/* HEADINGS */
-h1, h2 {
+/* HERO */
+.hero {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 34px;
 }
 
 .subtitle {
-    text-align: center;
     color: #64748b;
-    margin-bottom: 40px;
+    margin-top: 10px;
 }
 
-/* PARAGRAPHS */
-p {
-    text-align: justify;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-/* SECTION BOX */
-.section-box {
+/* PROFILE */
+.profile {
+    display: flex;
+    gap: 30px;
+    align-items: center;
     background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.profile img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.profile p {
+    text-align: justify;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.stat {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* SECTION */
+.section {
+    background: rgba(255,255,255,0.6);
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 40px;
 }
 
-/* LIST */
-ul {
-    margin-top: 10px;
+.section p {
+    text-align: justify;
+}
+
+/* ICON GRID */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+}
+
+.icon-card {
+    background: rgba(255,255,255,0.7);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 3px solid #2563eb;
     padding-left: 20px;
 }
 
-li {
-    margin-bottom: 10px;
+.timeline div {
+    margin-bottom: 20px;
 }
 
 /* PORTFOLIO */
-.portfolio {
-    margin-top: 60px;
-}
-
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
 }
 
 .portfolio-card {
     background: rgba(255,255,255,0.7);
-    padding: 25px;
-    border-radius: 16px;
-    transition: 0.3s;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-.tag {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 12px;
-    background: #2563eb;
-    color: white;
-    font-size: 12px;
-    border-radius: 6px;
+    padding: 20px;
+    border-radius: 12px;
 }
 
 /* PUBLICATIONS */
-.publications {
-    margin-top: 60px;
-}
-
 .pub-card {
     background: rgba(255,255,255,0.7);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
 }
 
 .pub-card a {
     text-decoration: none;
     color: #2563eb;
-    font-weight: bold;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .navbar {
+    .profile {
         flex-direction: column;
         text-align: center;
     }
 
-    .nav-links {
-        margin-top: 10px;
+    .stats {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .nav-links a {
-        display: inline-block;
-        margin: 8px;
+    .navbar {
+        flex-direction: column;
+        text-align: center;
     }
 }
 </style>
@@ -161,129 +176,97 @@ li {
 
 <div class="container">
 
+<!-- HERO -->
+<div class="hero">
 <h1>About Virexa Analytics</h1>
+<p class="subtitle">Where Data Meets Biology</p>
+</div>
 
-<p class="subtitle">
-Turning Complex Biological Data into Actionable Scientific Insights
-</p>
-
-<!-- SECTION 1 -->
-<div class="section-box">
+<!-- PROFILE -->
+<div class="profile">
+<img src="your-image.jpg" alt="Profile">
 <p>
-Virexa Analytics is a research-driven platform focused on solving real-world biological problems through advanced computational and analytical approaches.
-</p>
-
-<p>
-We work at the intersection of bioinformatics, molecular modeling, and artificial intelligence to help researchers, startups, and biotech professionals extract meaningful insights from complex datasets.
+Virexa Analytics is a research-driven platform focused on solving real-world biological problems using bioinformatics, molecular modeling, and AI. We transform complex biological datasets into actionable insights and publication-ready outputs.
 </p>
 </div>
 
-<!-- SECTION 2 -->
-<div class="section-box">
+<!-- STATS -->
+<div class="stats">
+<div class="stat">50+ Projects</div>
+<div class="stat">PhD-Level Expertise</div>
+<div class="stat">End-to-End Support</div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="section">
 <h2>What We Do</h2>
 
-<ul>
-<li>Decode high-throughput biological data (RNA-seq, microarray)</li>
-<li>Model and validate molecular interactions (docking & dynamics)</li>
-<li>Apply machine learning for predictive drug discovery</li>
-<li>Translate raw data into clear, research-ready conclusions</li>
-</ul>
+<div class="icon-grid">
+<div class="icon-card">🧬 RNA-seq & Microarray Analysis</div>
+<div class="icon-card">⚛️ Molecular Docking & Dynamics</div>
+<div class="icon-card">🤖 AI-based Drug Discovery</div>
+<div class="icon-card">📊 Data → Publication Conversion</div>
 </div>
 
-<!-- SECTION 3 -->
-<div class="section-box">
+</div>
+
+<!-- APPROACH -->
+<div class="section">
 <h2>Our Approach</h2>
-
 <p>
-Most platforms stop at analysis. We go further — focusing on biological relevance, mechanistic understanding, and scientifically interpretable results.
-</p>
-
-<p>
-This ensures that every output is not just computationally accurate, but biologically meaningful and publication-ready.
+We go beyond data processing by focusing on biological relevance, mechanistic insights, and scientifically interpretable outputs—ensuring meaningful and publishable results.
 </p>
 </div>
 
-<!-- SECTION 4 -->
-<div class="section-box">
-<h2>Why Virexa Analytics</h2>
-
-<ul>
-<li>Integrated expertise across biology, computation, and AI</li>
-<li>Focus on problem-solving, not just reporting</li>
-<li>Designed for research impact and real-world application</li>
-</ul>
+<!-- TIMELINE -->
+<div class="section">
+<h2>Journey</h2>
+<div class="timeline">
+<div>🎓 PhD Research in Biotechnology</div>
+<div>🧬 Specialized in RNA-seq & Computational Biology</div>
+<div>📄 Multiple Research & Publication Contributions</div>
+<div>🚀 Founded Virexa Analytics</div>
+</div>
 </div>
 
-<!-- SECTION 5 -->
-<div class="section-box">
-<h2>Who We Work With</h2>
-
-<ul>
-<li>Academic researchers & PhD scholars</li>
-<li>Biotech and pharmaceutical professionals</li>
-<li>Early-stage life science startups</li>
-</ul>
-</div>
-
-<!-- SECTION 6 -->
-<div class="section-box">
-<h2>Our Vision</h2>
-
-<p>
-To bridge the gap between complex biological systems and computational precision, enabling faster, smarter, and more reliable scientific discovery.
-</p>
-
-<p><i>Where data meets biology — and insights drive innovation.</i></p>
-</div>
-
-<!-- ================= PORTFOLIO ================= -->
-<div class="portfolio">
-
+<!-- PORTFOLIO -->
+<div class="section">
 <h2>Case Studies</h2>
-<p class="subtitle">Real research problems transformed into publication-ready outcomes</p>
 
 <div class="portfolio-grid">
 
 <div class="portfolio-card">
-<h3>RNA-seq Analysis – Dengue Study</h3>
-<p><b>Problem:</b> Raw gene expression data lacked interpretation</p>
-<p><b>Approach:</b> DESeq2 + KEGG pathway analysis</p>
-<p><b>Results:</b> Platelet-related insights identified</p>
-<span class="tag">RNA-seq</span>
+<h3>RNA-seq Analysis</h3>
+<p>Gene expression insights & pathway analysis</p>
 </div>
 
 <div class="portfolio-card">
 <h3>Molecular Docking</h3>
-<p><b>Approach:</b> Protein-ligand interaction studies</p>
-<p><b>Outcome:</b> High-affinity candidates identified</p>
-<span class="tag">Docking</span>
+<p>Protein-ligand interaction analysis</p>
 </div>
 
 <div class="portfolio-card">
-<h3>Molecular Dynamics</h3>
-<p><b>Approach:</b> RMSD, RMSF stability analysis</p>
-<p><b>Outcome:</b> Validated molecular interactions</p>
-<span class="tag">MD Simulation</span>
+<h3>MD Simulation</h3>
+<p>Stability validation of complexes</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- ================= PUBLICATIONS ================= -->
-<div class="publications">
-
+<!-- PUBLICATIONS -->
+<div class="section">
 <h2>Publications</h2>
 
 <div class="pub-card">
 <a href="https://link.springer.com/article/10.1007/s13721-025-00670-7" target="_blank">
-Springer Publication – View Article →
+Springer Publication →
 </a>
 </div>
 
 <div class="pub-card">
 <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003387893-2/obsessive-compulsive-disorder-vishal-chanda-senthilkumar-rajagopal-yuvashree-muralidaran" target="_blank">
-Taylor & Francis Chapter – View Work →
+Taylor & Francis Chapter →
 </a>
 </div>
 
