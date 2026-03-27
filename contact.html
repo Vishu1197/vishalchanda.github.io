@@ -86,27 +86,21 @@ body {
     width: 28px;
     height: 28px;
     fill: none;
-    stroke-width: 2;
+    stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
-/* ── FIX 1: target the rendered <svg> directly via card class ── */
-.email   .icon svg { stroke: #2563eb; }
-.call    .icon svg { stroke: #2563eb; }
-.whatsapp .icon svg { stroke: #25D366; }
-.github  .icon svg { stroke: #111827; }
-
-/* ── FIX 2: Instagram — swap CSS stroke for a real SVG gradient on the icon ── */
-/* The inline SVG icon is injected by Lucide; we override it via JS after createIcons() */
-/* See script block below */
+/* Email & Call — solid colors via CSS (Lucide is fine for these) */
+.email .icon svg { stroke: #2563eb; }
+.call  .icon svg { stroke: #2563eb; }
 
 /* GLOW EFFECTS */
 .contact-card:hover .icon { transform: scale(1.1); }
-.email:hover    .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
-.call:hover     .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
-.whatsapp:hover .icon { box-shadow: 0 0 20px rgba(37,211,102,0.5); }
-.github:hover   .icon { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
+.email:hover     .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+.call:hover      .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+.whatsapp:hover  .icon { box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+.github:hover    .icon { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
 .instagram:hover .icon { box-shadow: 0 0 25px rgba(221,42,123,0.5); }
 
 /* TEXT */
@@ -148,17 +142,6 @@ body {
 </head>
 <body>
 
-<!-- Instagram gradient defined in a real <svg> in the document -->
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#f58529"/>
-      <stop offset="50%"  stop-color="#dd2a7b"/>
-      <stop offset="100%" stop-color="#8134af"/>
-    </linearGradient>
-  </defs>
-</svg>
-
 <div class="navbar">
   <b>VirexaAnalytics</b>
   <div class="nav-links">
@@ -175,32 +158,86 @@ body {
 
   <div class="contact-grid">
 
+    <!-- EMAIL — Lucide, solid color via CSS -->
     <a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
       <div class="icon"><i data-lucide="mail"></i></div>
       <div class="label">Email</div>
       <div class="subtext">Send a detailed query</div>
     </a>
 
+    <!-- CALL — Lucide, solid color via CSS -->
     <a href="tel:+919148044376" class="contact-card call">
       <div class="icon"><i data-lucide="phone"></i></div>
       <div class="label">Call</div>
       <div class="subtext">Direct discussion</div>
     </a>
 
+    <!-- WHATSAPP — self-contained inline SVG; gradient defined + used inside the same <svg> -->
     <a href="https://wa.me/919148044376" class="contact-card whatsapp">
-      <div class="icon"><i data-lucide="message-circle"></i></div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="waGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#25D366"/>
+              <stop offset="100%" stop-color="#128C7E"/>
+            </linearGradient>
+          </defs>
+          <path stroke="url(#waGrad)" stroke-width="1.8"
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7
+               8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8
+               8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5
+               a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+      </div>
       <div class="label">WhatsApp</div>
       <div class="subtext">Fastest response</div>
     </a>
 
+    <!-- GITHUB — self-contained inline SVG; gradient defined + used inside the same <svg> -->
     <a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
-      <div class="icon"><i data-lucide="github"></i></div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ghGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4b5563"/>
+              <stop offset="100%" stop-color="#111827"/>
+            </linearGradient>
+          </defs>
+          <path stroke="url(#ghGrad)" stroke-width="1.8"
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61
+               c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77
+               5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0
+               C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77
+               a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7
+               A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </div>
       <div class="label">GitHub</div>
       <div class="subtext">View projects</div>
     </a>
 
+    <!-- INSTAGRAM — self-contained inline SVG; gradient defined + used inside the same <svg> -->
     <a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
-      <div class="icon"><i data-lucide="instagram"></i></div>
+      <div class="icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#f58529"/>
+              <stop offset="50%"  stop-color="#dd2a7b"/>
+              <stop offset="100%" stop-color="#8134af"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer rounded square -->
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#igGrad)" stroke-width="1.8"/>
+          <!-- Lens circle -->
+          <circle cx="12" cy="12" r="4" stroke="url(#igGrad)" stroke-width="1.8"/>
+          <!-- Dot — filled directly, no stroke needed -->
+          <circle cx="17.5" cy="6.5" r="1" fill="#dd2a7b"/>
+        </svg>
+      </div>
       <div class="label">Instagram</div>
       <div class="subtext">Latest updates</div>
     </a>
@@ -211,18 +248,7 @@ body {
 <a href="https://wa.me/919148044376" class="whatsapp-float">💬</a>
 
 <script>
-  // 1. Render all Lucide icons first
   lucide.createIcons();
-
-  // 2. FIX: Apply Instagram gradient directly as an SVG attribute on the rendered <svg>
-  //    CSS `stroke: url(#id)` doesn't work cross-browser — must be an inline attribute
-  const instaCard = document.querySelector('.contact-card.instagram');
-  if (instaCard) {
-    const svg = instaCard.querySelector('.icon svg');
-    if (svg) {
-      svg.setAttribute('stroke', 'url(#instaGradient)');
-    }
-  }
 </script>
 </body>
 </html>
