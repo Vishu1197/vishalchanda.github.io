@@ -24,7 +24,6 @@ body {
 
 .nav-links {
     display: flex;
-    align-items: center;
 }
 
 .nav-links a {
@@ -33,34 +32,54 @@ body {
     color: #1e293b;
 }
 
-/* CONTENT */
+/* CONTAINER */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 60px 20px;
 }
 
-/* TEXT */
+/* HEADINGS */
 h1, h2 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .subtitle {
     text-align: center;
     color: #64748b;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+/* PARAGRAPHS */
+p {
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* SECTION BOX */
+.section-box {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
 }
 
 /* LIST */
 ul {
-    text-align: left;
-    max-width: 700px;
-    margin: auto;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
 }
 
 /* PORTFOLIO */
 .portfolio {
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .portfolio-grid {
@@ -71,21 +90,14 @@ ul {
 
 .portfolio-card {
     background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(12px);
     padding: 25px;
     border-radius: 16px;
-    text-align: left;
     transition: 0.3s;
 }
 
 .portfolio-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-}
-
-.portfolio-card p {
-    font-size: 14px;
-    margin: 6px 0;
 }
 
 .tag {
@@ -100,7 +112,7 @@ ul {
 
 /* PUBLICATIONS */
 .publications {
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .pub-card {
@@ -108,12 +120,6 @@ ul {
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-.pub-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .pub-card a {
@@ -155,33 +161,82 @@ ul {
 
 <div class="container">
 
-<h1>About VirexaAnalytics</h1>
+<h1>About Virexa Analytics</h1>
 
 <p class="subtitle">
-Bridging bioinformatics analysis and scientific communication
+Turning Complex Biological Data into Actionable Scientific Insights
+</p>
+
+<!-- SECTION 1 -->
+<div class="section-box">
+<p>
+Virexa Analytics is a research-driven platform focused on solving real-world biological problems through advanced computational and analytical approaches.
 </p>
 
 <p>
-VirexaAnalytics was created to help researchers transform complex experimental and computational data into clear, structured, and publication-ready manuscripts.
+We work at the intersection of bioinformatics, molecular modeling, and artificial intelligence to help researchers, startups, and biotech professionals extract meaningful insights from complex datasets.
 </p>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section-box">
+<h2>What We Do</h2>
 
 <ul>
-<li>Bioinformatics analysis (RNA-seq, Microarray)</li>
-<li>Molecular docking & Molecular dynamics simulation</li>
-<li>Drug discovery & ADMET insights</li>
-<li>Scientific writing & manuscript development</li>
+<li>Decode high-throughput biological data (RNA-seq, microarray)</li>
+<li>Model and validate molecular interactions (docking & dynamics)</li>
+<li>Apply machine learning for predictive drug discovery</li>
+<li>Translate raw data into clear, research-ready conclusions</li>
 </ul>
+</div>
 
-<br>
-
-<h2>About Me</h2>
+<!-- SECTION 3 -->
+<div class="section-box">
+<h2>Our Approach</h2>
 
 <p>
-I am a PhD scholar in Biotechnology working in bioinformatics, nano-biotechnology, and virology, with hands-on experience in RNA-seq analysis, molecular docking, and computational biology.
+Most platforms stop at analysis. We go further — focusing on biological relevance, mechanistic understanding, and scientifically interpretable results.
 </p>
 
-<!-- ================= PORTFOLIO ================= -->
+<p>
+This ensures that every output is not just computationally accurate, but biologically meaningful and publication-ready.
+</p>
+</div>
 
+<!-- SECTION 4 -->
+<div class="section-box">
+<h2>Why Virexa Analytics</h2>
+
+<ul>
+<li>Integrated expertise across biology, computation, and AI</li>
+<li>Focus on problem-solving, not just reporting</li>
+<li>Designed for research impact and real-world application</li>
+</ul>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section-box">
+<h2>Who We Work With</h2>
+
+<ul>
+<li>Academic researchers & PhD scholars</li>
+<li>Biotech and pharmaceutical professionals</li>
+<li>Early-stage life science startups</li>
+</ul>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section-box">
+<h2>Our Vision</h2>
+
+<p>
+To bridge the gap between complex biological systems and computational precision, enabling faster, smarter, and more reliable scientific discovery.
+</p>
+
+<p><i>Where data meets biology — and insights drive innovation.</i></p>
+</div>
+
+<!-- ================= PORTFOLIO ================= -->
 <div class="portfolio">
 
 <h2>Case Studies</h2>
@@ -192,37 +247,23 @@ I am a PhD scholar in Biotechnology working in bioinformatics, nano-biotechnolog
 <div class="portfolio-card">
 <h3>RNA-seq Analysis – Dengue Study</h3>
 <p><b>Problem:</b> Raw gene expression data lacked interpretation</p>
-<p><b>Approach:</b> DESeq2 + KEGG + immune pathway analysis</p>
-<p><b>Results:</b> Platelet-related gene insights identified</p>
-<p><b>Outcome:</b> Publication-ready results</p>
-<span class="tag">RNA-seq • KEGG</span>
+<p><b>Approach:</b> DESeq2 + KEGG pathway analysis</p>
+<p><b>Results:</b> Platelet-related insights identified</p>
+<span class="tag">RNA-seq</span>
 </div>
 
 <div class="portfolio-card">
 <h3>Molecular Docking</h3>
-<p><b>Problem:</b> No binding clarity for target proteins</p>
-<p><b>Approach:</b> Docking + interaction analysis</p>
-<p><b>Results:</b> High-affinity ligands identified</p>
-<p><b>Outcome:</b> Drug candidates shortlisted</p>
+<p><b>Approach:</b> Protein-ligand interaction studies</p>
+<p><b>Outcome:</b> High-affinity candidates identified</p>
 <span class="tag">Docking</span>
 </div>
 
 <div class="portfolio-card">
 <h3>Molecular Dynamics</h3>
-<p><b>Problem:</b> Docking results lacked validation</p>
-<p><b>Approach:</b> RMSD, RMSF analysis</p>
-<p><b>Results:</b> Stable interaction confirmed</p>
-<p><b>Outcome:</b> Strong computational validation</p>
+<p><b>Approach:</b> RMSD, RMSF stability analysis</p>
+<p><b>Outcome:</b> Validated molecular interactions</p>
 <span class="tag">MD Simulation</span>
-</div>
-
-<div class="portfolio-card">
-<h3>Manuscript Writing</h3>
-<p><b>Problem:</b> Data present but unstructured</p>
-<p><b>Approach:</b> Scientific writing + formatting</p>
-<p><b>Results:</b> Clear structured manuscript</p>
-<p><b>Outcome:</b> Ready for journal submission</p>
-<span class="tag">Writing</span>
 </div>
 
 </div>
@@ -230,11 +271,9 @@ I am a PhD scholar in Biotechnology working in bioinformatics, nano-biotechnolog
 </div>
 
 <!-- ================= PUBLICATIONS ================= -->
-
 <div class="publications">
 
 <h2>Publications</h2>
-<p class="subtitle">Peer-reviewed and academic contributions</p>
 
 <div class="pub-card">
 <a href="https://link.springer.com/article/10.1007/s13721-025-00670-7" target="_blank">
