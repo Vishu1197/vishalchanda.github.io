@@ -4,7 +4,6 @@
 <title>Contact - VirexaAnalytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- LUCIDE -->
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
@@ -93,23 +92,21 @@ body {
     transition: 0.3s;
 }
 
-/* ICON SIZE */
-.icon i {
+/* FIXED ICON TARGETING */
+.icon svg {
     width: 28px;
     height: 28px;
 }
 
-/* BRAND COLORS */
-.email i { color:#2563eb; }
-.call i { color:#2563eb; }
-.whatsapp i { color:#25D366; }
-.github i { color:#111827; }
+/* BRAND COLORS (FIXED) */
+.email svg { stroke:#2563eb; }
+.call svg { stroke:#2563eb; }
+.whatsapp svg { stroke:#25D366; }
+.github svg { stroke:#111827; }
 
-/* INSTAGRAM GRADIENT ICON */
-.instagram i {
-    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* INSTAGRAM GRADIENT */
+.instagram svg {
+    stroke: url(#instaGradient);
 }
 
 /* GLOW EFFECTS */
@@ -162,7 +159,6 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* ANIMATION */
@@ -193,6 +189,17 @@ body {
 </head>
 
 <body>
+
+<!-- 🔥 INSTAGRAM GRADIENT DEFINITION -->
+<svg width="0" height="0">
+<defs>
+<linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#f58529"/>
+<stop offset="50%" stop-color="#dd2a7b"/>
+<stop offset="100%" stop-color="#8134af"/>
+</linearGradient>
+</defs>
+</svg>
 
 <div class="navbar">
 <b>VirexaAnalytics</b>
