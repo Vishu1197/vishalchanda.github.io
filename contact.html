@@ -3,9 +3,7 @@
 <head>
 <title>Contact - VirexaAnalytics</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <script src="https://unpkg.com/lucide@latest"></script>
-
 <style>
 body {
     margin: 0;
@@ -23,11 +21,7 @@ body {
     background: rgba(255,255,255,0.5);
     backdrop-filter: blur(10px);
 }
-
-.nav-links {
-    display: flex;
-}
-
+.nav-links { display: flex; }
 .nav-links a {
     margin: 0 15px;
     text-decoration: none;
@@ -40,7 +34,6 @@ body {
     text-align: center;
     padding: 60px 20px;
 }
-
 .subtitle {
     color: #64748b;
     margin-top: 10px;
@@ -68,18 +61,16 @@ body {
     transform: translateY(30px);
     animation: fadeUp 0.8s forwards;
 }
-
 .contact-card:nth-child(2){animation-delay:0.2s;}
 .contact-card:nth-child(3){animation-delay:0.4s;}
 .contact-card:nth-child(4){animation-delay:0.6s;}
 .contact-card:nth-child(5){animation-delay:0.8s;}
-
 .contact-card:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* ICON BASE */
+/* ICON CIRCLE */
 .icon {
     width: 65px;
     height: 65px;
@@ -91,61 +82,38 @@ body {
     background: #f1f5f9;
     transition: 0.3s;
 }
-
-/* FIXED ICON TARGETING */
 .icon svg {
     width: 28px;
     height: 28px;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-/* BRAND COLORS (FIXED) */
-.email svg { stroke:#2563eb; }
-.call svg { stroke:#2563eb; }
-.whatsapp svg { stroke:#25D366; }
-.github svg { stroke:#111827; }
+/* ── FIX 1: target the rendered <svg> directly via card class ── */
+.email   .icon svg { stroke: #2563eb; }
+.call    .icon svg { stroke: #2563eb; }
+.whatsapp .icon svg { stroke: #25D366; }
+.github  .icon svg { stroke: #111827; }
 
-/* INSTAGRAM GRADIENT */
-.instagram svg {
-    stroke: url(#instaGradient);
-}
+/* ── FIX 2: Instagram — swap CSS stroke for a real SVG gradient on the icon ── */
+/* The inline SVG icon is injected by Lucide; we override it via JS after createIcons() */
+/* See script block below */
 
 /* GLOW EFFECTS */
-.contact-card:hover .icon {
-    transform: scale(1.1);
-}
-
-.email:hover .icon {
-    box-shadow: 0 0 20px rgba(37,99,235,0.4);
-}
-
-.call:hover .icon {
-    box-shadow: 0 0 20px rgba(37,99,235,0.4);
-}
-
-.whatsapp:hover .icon {
-    box-shadow: 0 0 20px rgba(37,211,102,0.5);
-}
-
-.github:hover .icon {
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-
-.instagram:hover .icon {
-    box-shadow: 0 0 25px rgba(221,42,123,0.5);
-}
+.contact-card:hover .icon { transform: scale(1.1); }
+.email:hover    .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+.call:hover     .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+.whatsapp:hover .icon { box-shadow: 0 0 20px rgba(37,211,102,0.5); }
+.github:hover   .icon { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
+.instagram:hover .icon { box-shadow: 0 0 25px rgba(221,42,123,0.5); }
 
 /* TEXT */
-.label {
-    font-weight: 600;
-}
+.label   { font-weight: 600; }
+.subtext { font-size: 13px; color: #64748b; margin-top: 5px; }
 
-.subtext {
-    font-size: 13px;
-    color: #64748b;
-    margin-top: 5px;
-}
-
-/* FLOAT */
+/* FLOAT BUTTON */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -159,104 +127,102 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+    transition: transform 0.2s;
 }
+.whatsapp-float:hover { transform: scale(1.1); }
 
 /* ANIMATION */
 @keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-links {
-        margin-top: 10px;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        margin: 8px;
-    }
+    .navbar { flex-direction: column; text-align: center; }
+    .nav-links { margin-top: 10px; }
+    .nav-links a { display: inline-block; margin: 8px; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- 🔥 INSTAGRAM GRADIENT DEFINITION -->
-<svg width="0" height="0">
-<defs>
-<linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#f58529"/>
-<stop offset="50%" stop-color="#dd2a7b"/>
-<stop offset="100%" stop-color="#8134af"/>
-</linearGradient>
-</defs>
+<!-- Instagram gradient defined in a real <svg> in the document -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#f58529"/>
+      <stop offset="50%"  stop-color="#dd2a7b"/>
+      <stop offset="100%" stop-color="#8134af"/>
+    </linearGradient>
+  </defs>
 </svg>
 
 <div class="navbar">
-<b>VirexaAnalytics</b>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
+  <b>VirexaAnalytics</b>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </div>
 
 <div class="container">
+  <h1>Contact</h1>
+  <p class="subtitle">Reach out for research support, writing, or collaboration</p>
 
-<h1>Contact</h1>
-<p class="subtitle">Reach out for research support, writing, or collaboration</p>
+  <div class="contact-grid">
 
-<div class="contact-grid">
+    <a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
+      <div class="icon"><i data-lucide="mail"></i></div>
+      <div class="label">Email</div>
+      <div class="subtext">Send a detailed query</div>
+    </a>
 
-<a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
-<div class="icon"><i data-lucide="mail"></i></div>
-<div class="label">Email</div>
-<div class="subtext">Send a detailed query</div>
-</a>
+    <a href="tel:+919148044376" class="contact-card call">
+      <div class="icon"><i data-lucide="phone"></i></div>
+      <div class="label">Call</div>
+      <div class="subtext">Direct discussion</div>
+    </a>
 
-<a href="tel:+919148044376" class="contact-card call">
-<div class="icon"><i data-lucide="phone"></i></div>
-<div class="label">Call</div>
-<div class="subtext">Direct discussion</div>
-</a>
+    <a href="https://wa.me/919148044376" class="contact-card whatsapp">
+      <div class="icon"><i data-lucide="message-circle"></i></div>
+      <div class="label">WhatsApp</div>
+      <div class="subtext">Fastest response</div>
+    </a>
 
-<a href="https://wa.me/919148044376" class="contact-card whatsapp">
-<div class="icon"><i data-lucide="message-circle"></i></div>
-<div class="label">WhatsApp</div>
-<div class="subtext">Fastest response</div>
-</a>
+    <a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
+      <div class="icon"><i data-lucide="github"></i></div>
+      <div class="label">GitHub</div>
+      <div class="subtext">View projects</div>
+    </a>
 
-<a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
-<div class="icon"><i data-lucide="github"></i></div>
-<div class="label">GitHub</div>
-<div class="subtext">View projects</div>
-</a>
+    <a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
+      <div class="icon"><i data-lucide="instagram"></i></div>
+      <div class="label">Instagram</div>
+      <div class="subtext">Latest updates</div>
+    </a>
 
-<a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
-<div class="icon"><i data-lucide="instagram"></i></div>
-<div class="label">Instagram</div>
-<div class="subtext">Latest updates</div>
-</a>
-
-</div>
-
+  </div>
 </div>
 
 <a href="https://wa.me/919148044376" class="whatsapp-float">💬</a>
 
 <script>
-lucide.createIcons();
-</script>
+  // 1. Render all Lucide icons first
+  lucide.createIcons();
 
+  // 2. FIX: Apply Instagram gradient directly as an SVG attribute on the rendered <svg>
+  //    CSS `stroke: url(#id)` doesn't work cross-browser — must be an inline attribute
+  const instaCard = document.querySelector('.contact-card.instagram');
+  if (instaCard) {
+    const svg = instaCard.querySelector('.icon svg');
+    if (svg) {
+      svg.setAttribute('stroke', 'url(#instaGradient)');
+    }
+  }
+</script>
 </body>
 </html>
