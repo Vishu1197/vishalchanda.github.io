@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | VishOmics</title>
+<meta name="description" content="Dengue antiviral discovery, transcriptomics of dengue driven thrombocytopenia and nanocarrier delivery. The doctoral research programme of Vishal Chanda.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070d'/%3E%3Cpath d='M17 17 L32 46 L47 17' fill='none' stroke='%2322d3ee' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='46' r='4.5' fill='%238b5cf6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<noscript><style>.rv{opacity:1;transform:none}.acc-body,.skill-body{max-height:none}</style></noscript>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress"></div>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="aurora a1" aria-hidden="true"></div>
+<div class="aurora a2" aria-hidden="true"></div>
+<div class="grid-veil" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+        <path d="M20 6.5 L20 37.5 M6.6 14.25 L33.4 29.75 M33.4 14.25 L6.6 29.75" stroke="rgba(34,211,238,.3)" stroke-width="1"/>
+        <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+        <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+        <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+      </svg>
+      <span>Vish<b>Omics</b></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="contact.html">Get in touch</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main" class="shell">
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumb rv"><a href="index.html">Home</a><i>/</i>Research</div>
+      <h1 class="rv d1">Research programme</h1>
+      <p class="lede rv d2">
+        Dengue infects an estimated hundreds of millions of people each year and still has no
+        licensed antiviral. My doctoral work approaches that from three directions at once: find
+        the molecule, understand what the virus is actually doing to the host, and solve the
+        delivery problem that stops most natural product candidates from ever working.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================================================== 3D viewer -->
+  <section class="section tight">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Targets</span>
+        <h2 class="h2">The proteins under the microscope</h2>
+        <p class="lede">
+          Structures streamed live from the RCSB Protein Data Bank. Drag to rotate, scroll to zoom,
+          switch representation with the controls.
+        </p>
+      </div>
+
+      <div class="viewer-shell rv d1">
+        <div class="viewer-bar">
+          <span class="lbl">Structure</span>
+          <button class="vbtn on" data-pdb="2FOM" type="button">2FOM</button>
+          <button class="vbtn" data-pdb="5K5M" type="button">5K5M</button>
+          <button class="vbtn" data-pdb="1OAN" type="button">1OAN</button>
+          <button class="vbtn" data-pdb="5CCV" type="button">5CCV</button>
+        </div>
+        <div class="viewer-bar">
+          <span class="lbl">Style</span>
+          <button class="vbtn on" data-style="cartoon" type="button">cartoon</button>
+          <button class="vbtn" data-style="surface" type="button">surface</button>
+          <button class="vbtn" data-style="stick" type="button">stick</button>
+          <button class="vbtn" data-style="sphere" type="button">sphere</button>
+          <button class="vbtn" id="spin-toggle" type="button" style="margin-left:auto">spin: on</button>
+        </div>
+        <div id="viewer">
+          <div class="viewer-load">
+            <div class="spinner"></div>
+            <div>Loading structure</div>
+          </div>
+        </div>
+        <div class="viewer-note" id="viewer-meta">
+          <span>PDB 2FOM &middot; NS2B / NS3 protease</span>
+          <span>Dengue virus 2 &middot; 1.50 &#197;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= pillars -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Three strands</span>
+        <h2 class="h2">What each one is trying to answer</h2>
+      </div>
+
+      <div class="rv d1">
+
+        <div class="acc open">
+          <button class="acc-head" type="button" aria-expanded="true">
+            <span class="acc-idx">01</span>
+            Computational drug discovery and antiviral screening
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="acc-body">
+            <div class="acc-inner">
+              <p>
+                Natural products are the obvious place to look for dengue antivirals and the hardest
+                place to look well. The chemical space is enormous, the assays are slow, and docking
+                scores on their own are a weak filter. The approach I published in 2025 puts a hybrid
+                machine learning model in front of the docking step so that the compounds reaching
+                simulation are already the ones worth simulating, then uses molecular dynamics and
+                binding free energy analysis as the real test of whether a pose survives.
+              </p>
+              <ul>
+                <li>Targets across the dengue proteome: the NS2B/NS3 protease, NS5 RNA dependent RNA polymerase and methyltransferase, and the envelope protein</li>
+                <li>Feedforward neural networks, random forest, k-nearest neighbours and ensemble models trained on descriptor and docking data</li>
+                <li>Pocket prediction with P2Rank, docking with AutoDock Vina through UCSF Chimera, all box dimensions measured rather than assumed</li>
+                <li>100 to 500 ns molecular dynamics in GROMACS with the holo system intact, cofactors and metal ions retained</li>
+                <li>MM-PBSA and MM-GBSA binding free energies, ADMET profiling in ADMETLab 3.0, drug likeness screening</li>
+              </ul>
+              <div class="tags" style="margin-top:18px">
+                <span class="tag c">Published 2025</span>
+                <span class="tag">NMAHIB 14(1), 164</span>
+                <span class="tag a">Best Oral Presentation 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-idx">02</span>
+            Dengue transcriptomics and the mechanism behind thrombocytopenia
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="acc-body">
+            <div class="acc-inner">
+              <p>
+                The falling platelet count in severe dengue has long been explained as direct
+                destruction. That explanation does not account for everything the transcriptome
+                shows. This strand of the work reads dengue infected expression data to ask what
+                the non structural proteins are doing to host gene regulatory networks, and which
+                of those changes actually track with disease progression.
+              </p>
+              <ul>
+                <li>RNA-Seq and microarray datasets analysed for differential gene expression</li>
+                <li>Pathway enrichment and gene set enrichment analysis to find the programmes being pushed</li>
+                <li>Gene regulatory network reconstruction to separate drivers from passengers</li>
+                <li>Mapping of dengue non structural protein activity onto the affected host pathways</li>
+              </ul>
+              <div class="tags" style="margin-top:18px">
+                <span class="tag c">Published 2026</span>
+                <span class="tag">J Thromb Thrombolysis</span>
+                <span class="tag v">Transcriptomics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc">
+          <button class="acc-head" type="button" aria-expanded="false">
+            <span class="acc-idx">03</span>
+            Nanocarrier delivery and in vitro antiviral validation
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="acc-body">
+            <div class="acc-inner">
+              <p>
+                A phytochemical with a beautiful binding profile and no bioavailability is not a
+                drug. This strand builds lipid and polymeric nanoparticles to carry antiviral
+                candidates past that wall, characterises what comes out of the formulation, and
+                then tests it against dengue virus serotype 2 in cell culture. A low energy
+                fabrication method for controlling droplet size in gallic acid nano-emulsions came
+                out of this work and is filed as an Indian patent application.
+              </p>
+              <ul>
+                <li>Lipid and polymeric nanoparticle formulation for targeted antiviral delivery</li>
+                <li>Low energy fabrication techniques for droplet size control in nano-emulsions</li>
+                <li>Cell culture and virus host interaction studies</li>
+                <li>TCID50, plaque assay and virus neutralisation assays for antiviral efficacy</li>
+              </ul>
+              <div class="tags" style="margin-top:18px">
+                <span class="tag a">Patent filed 2025</span>
+                <span class="tag">App. No. 202541087201</span>
+                <span class="tag g">DENV-2 in vitro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== method flow -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Method</span>
+        <h2 class="h2">From library to bench</h2>
+        <p class="lede">The pipeline every candidate has to survive before it is worth an assay plate.</p>
+      </div>
+
+      <div class="tl rv d1">
+        <div class="tl-item">
+          <div class="tl-when">Step 01</div>
+          <h3>Library curation</h3>
+          <div class="tl-where">ChEMBL and PubChem identifiers reconciled, descriptors computed</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">Step 02</div>
+          <h3>Machine learning triage</h3>
+          <div class="tl-where">Hybrid models predict affinity from descriptors, cutting the set before any docking runs</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">Step 03</div>
+          <h3>Pocket prediction and docking</h3>
+          <div class="tl-where">P2Rank locates the site, the grid box is measured from the lining atoms, AutoDock Vina docks the survivors</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">Step 04</div>
+          <h3>Molecular dynamics</h3>
+          <div class="tl-where">100 to 500 ns in GROMACS with cofactors and metal ions kept in place, RMSD, RMSF, Rg, hydrogen bonds and SASA</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">Step 05</div>
+          <h3>Binding free energy and ADMET</h3>
+          <div class="tl-where">MM-PBSA and MM-GBSA rescoring, then drug likeness and toxicity profiling</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">Step 06</div>
+          <h3>Formulation and assay</h3>
+          <div class="tl-where">Nanoparticle encapsulation, then TCID50, plaque assay and neutralisation against DENV-2</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="cta rv">
+        <h2 class="h2">The tooling behind all of this is public</h2>
+        <p>Every step above is backed by an open source tool I wrote and put on GitHub.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="software.html">See the software</a>
+          <a class="btn btn-ghost" href="publications.html">Read the papers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+            <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+            <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+            <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+          </svg>
+          <span>Vish<b>Omics</b></span>
+        </a>
+        <p class="foot-blurb">Computational biology for antiviral discovery. Built and maintained by Vishal Chanda, Bengaluru, India.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Vishu1197" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/vishal-chanda-2b1053a6" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0000-0002-1646-6329" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=gdA8TAIAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.researchgate.net/profile/Vishal-Chanda" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span data-year>2026</span> Vishal Chanda &middot; VishOmics</span>
+      <span>Structures rendered with 3Dmol.js, data from the RCSB PDB</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.5.5/3Dmol-min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

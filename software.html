@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software | VishOmics</title>
+<meta name="description" content="Eight open source research tools by Vishal Chanda: DockPred, DockMate, GridMate, DynaMate, BioSimBench, PDB-Harvester and more.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070d'/%3E%3Cpath d='M17 17 L32 46 L47 17' fill='none' stroke='%2322d3ee' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='46' r='4.5' fill='%238b5cf6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<noscript><style>.rv{opacity:1;transform:none}.acc-body,.skill-body{max-height:none}</style></noscript>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress"></div>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="aurora a1" aria-hidden="true"></div>
+<div class="aurora a2" aria-hidden="true"></div>
+<div class="grid-veil" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+        <path d="M20 6.5 L20 37.5 M6.6 14.25 L33.4 29.75 M33.4 14.25 L6.6 29.75" stroke="rgba(34,211,238,.3)" stroke-width="1"/>
+        <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+        <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+        <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+      </svg>
+      <span>Vish<b>Omics</b></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="contact.html">Get in touch</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main" class="shell">
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumb rv"><a href="index.html">Home</a><i>/</i>Software</div>
+      <h1 class="rv d1">Research software</h1>
+      <p class="lede rv d2">
+        Eight open source tools, all of them written because a step in my own pipeline was slower,
+        vaguer or more error prone than it needed to be. Together they cover the whole path from a
+        PDB identifier to a quality checked molecular dynamics trajectory. MIT licensed, on GitHub.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+
+      <div class="card-grid two">
+
+        <!-- 1 -->
+        <article class="repo rv">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+              DockPred
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">Binding affinity from descriptors alone, learned from 8.7 million docking runs.</p>
+          <p class="desc">
+            A machine learning and deep learning ensemble that predicts protein ligand docking
+            scores in kcal/mol straight from precomputed molecular descriptors. It puts a fast
+            filter in front of the expensive docking step, so the compounds that reach Vina are
+            the ones already worth the compute.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python 3.10+</span><span class="tag c">scikit-learn</span>
+            <span class="tag v">PyTorch</span><span class="tag g">LightGBM</span>
+            <span class="tag g">XGBoost</span><span class="tag g">CatBoost</span><span class="tag a">Optuna</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/docking-predictor" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="repo rv d1">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+              DockMate
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">One receptor, an entire ligand library, one ranked affinity table.</p>
+          <p class="desc">
+            Drives Chimera's native Vina command headlessly across a ligand folder, keeping
+            Chimera's receptor preparation and ViewDock compatible output while removing the click
+            through workflow. Results are identical to docking by hand, and every generated command
+            file is preserved for audit and reproducibility. Box validation, resumable runs and
+            isolated per ligand processes come as standard.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python, stdlib only</span><span class="tag v">UCSF Chimera 1.19</span>
+            <span class="tag g">AutoDock Vina</span><span class="tag">Windows / Linux / macOS</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/DockMate" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="repo rv d2">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+              GridMate
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">Measured docking boxes, not the customary 25 &#197; guess.</p>
+          <p class="desc">
+            Closes the gap P2Rank leaves open. Pocket prediction returns ranked centres and
+            confidence scores but says nothing about search volume, so box size is usually assumed,
+            either oversampling empty solvent or clipping the ligand's rotational freedom. GridMate
+            derives the box from the coordinates of the atoms lining each pocket plus headroom,
+            making the dimension a measurement rather than a convention.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python</span><span class="tag v">P2Rank 2.5</span><span class="tag a">Pairs with DockMate</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/GridMate" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="repo rv d3">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c4 6 12 6 16 0M4 20c4-6 12-6 16 0"/><path d="M6.5 8h11M6.5 16h11M9 12h6"/></svg>
+              DynaMate
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">100, 200 or 500 ns of molecular dynamics on the protein as it crystallised. Cofactor, metal ion and all.</p>
+          <p class="desc">
+            Addresses a real modelling error rather than a convenience problem. A GTPase carries GDP
+            and Mg2+, a kinase carries ATP, a dehydrogenase carries NAD+. Stripping those out to
+            satisfy the force field simulates a protein that does not exist. DynaMate keeps the holo
+            system intact and parameterises it properly. Drop a receptor and a ligand into a working
+            directory and run it.
+          </p>
+          <div class="tags">
+            <span class="tag c">Shell</span><span class="tag g">GROMACS 2021+</span>
+            <span class="tag a">AmberTools</span><span class="tag a">GAFF2 / AM1-BCC</span>
+            <span class="tag c">Python</span><span class="tag">Linux WSL2</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/DynaMate" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="repo rv">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><path d="M21 12a9 9 0 1 1-9-9"/><path d="M16 3h5v5"/></svg>
+              BioSimBench
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">Quality control for GROMACS runs, before you trust the trajectory.</p>
+          <p class="desc">
+            Inspects a simulation directory, performs structural and metadata level checks, and
+            writes a standalone HTML report. It detects the expected files, extracts parameters from
+            the configuration, scans the logs for completion status and error patterns, and returns
+            PASS, WARN or FAIL against each check. Roadmap runs through energy analysis, structural
+            analysis and a full research dashboard.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python 3</span><span class="tag g">GROMACS</span>
+            <span class="tag">pytest</span><span class="tag a">HTML reporting</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/BioSimBench" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="repo rv d1">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 8h4M17 8h4M3 16h4M17 16h4"/><circle cx="12" cy="8" r="2"/><circle cx="12" cy="16" r="2"/></svg>
+              PDB-Harvester
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">Harvesting protein structures seamlessly from global PDB archives.</p>
+          <p class="desc">
+            A command line utility that pulls 3D structures in PDB and mmCIF format from the RCSB,
+            wwPDB, PDBe and PDBj mirrors, with failover between them, resumable streaming downloads,
+            retry with exponential backoff, and a JSON log of exactly what came back. Built for the
+            moment a screening campaign needs four hundred structures and a flaky connection.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python</span><span class="tag v">RCSB PDB API</span>
+            <span class="tag">Multi mirror failover</span><span class="tag a">JSON logging</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/-PDB-Harvester" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="repo rv d2">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10a4 4 0 0 1 0 8H8"/><polyline points="7 11 4 15 7 19" transform="translate(0,-4)"/><path d="M20 17h-6"/></svg>
+              Protein Descriptor PDBID
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">Per protein descriptors straight out of a structure file.</p>
+          <p class="desc">
+            Detects, parses and computes per protein descriptors, hydrogen bond donors and
+            acceptors and molecular mass, from PDB and mmCIF files. Robust to the encoding surprises
+            that structure files are full of, and shaped so its output drops into a downstream
+            machine learning or docking workflow without reformatting.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python 3.8+</span><span class="tag v">Biopython</span>
+            <span class="tag c">pandas</span><span class="tag">PDB / mmCIF</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/Protein_Descriptor_PDBID" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="repo rv d3">
+          <div class="repo-top">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+              ChemBL2PubChem-Bridge
+            </h3>
+            <span class="live"><i></i>Live</span>
+          </div>
+          <p class="pitch">Maps ChEMBL identifiers to PubChem CIDs and keeps every original column.</p>
+          <p class="desc">
+            ChEMBL and PubChem use incompatible identifier systems, which quietly breaks any
+            workflow that draws on both. This bridges them, turning CHEMBL25 into 2244 while
+            preserving the rest of the row, and writes a CID based docking CSV ready for the next
+            stage. Pure standard library, querying PubChem's public REST API with no credentials.
+          </p>
+          <div class="tags">
+            <span class="tag c">Python 3.8+</span><span class="tag">Zero dependencies</span>
+            <span class="tag v">PubChem REST</span><span class="tag a">ChEMBL</span>
+          </div>
+          <div class="repo-foot">
+            <a href="https://github.com/Vishu1197/ChemBL2PubChem-Bridge" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+              Repository
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="cta rv">
+        <h2 class="h2">All of it is on GitHub</h2>
+        <p>Open an issue, fork a tool, or tell me what is broken. Contributions are welcome.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://github.com/Vishu1197" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+            github.com/Vishu1197
+          </a>
+          <a class="btn btn-ghost" href="research.html">How they fit together</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+            <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+            <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+            <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+          </svg>
+          <span>Vish<b>Omics</b></span>
+        </a>
+        <p class="foot-blurb">Computational biology for antiviral discovery. Built and maintained by Vishal Chanda, Bengaluru, India.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Vishu1197" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/vishal-chanda-2b1053a6" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0000-0002-1646-6329" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=gdA8TAIAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.researchgate.net/profile/Vishal-Chanda" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span data-year>2026</span> Vishal Chanda &middot; VishOmics</span>
+      <span>All tools MIT licensed</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

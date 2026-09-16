@@ -1,254 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact - VirexaAnalytics</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://unpkg.com/lucide@latest"></script>
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(120deg, #eef2f7, #dbeafe);
-    color: #1e293b;
-}
-
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
-}
-.nav-links { display: flex; }
-.nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #1e293b;
-    font-weight: 500;
-}
-
-/* CONTAINER */
-.container {
-    text-align: center;
-    padding: 60px 20px;
-}
-.subtitle {
-    color: #64748b;
-    margin-top: 10px;
-}
-
-/* GRID */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 25px;
-    max-width: 900px;
-    margin: 40px auto;
-}
-
-/* CARD */
-.contact-card {
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(12px);
-    padding: 30px;
-    border-radius: 18px;
-    text-decoration: none;
-    color: #1e293b;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 0.8s forwards;
-}
-.contact-card:nth-child(2){animation-delay:0.2s;}
-.contact-card:nth-child(3){animation-delay:0.4s;}
-.contact-card:nth-child(4){animation-delay:0.6s;}
-.contact-card:nth-child(5){animation-delay:0.8s;}
-.contact-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* ICON CIRCLE */
-.icon {
-    width: 65px;
-    height: 65px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f1f5f9;
-    transition: 0.3s;
-}
-.icon svg {
-    width: 28px;
-    height: 28px;
-    fill: none;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* Email & Call — solid colors via CSS (Lucide is fine for these) */
-.email .icon svg { stroke: #2563eb; }
-.call  .icon svg { stroke: #2563eb; }
-
-/* GLOW EFFECTS */
-.contact-card:hover .icon { transform: scale(1.1); }
-.email:hover     .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
-.call:hover      .icon { box-shadow: 0 0 20px rgba(37,99,235,0.4); }
-.whatsapp:hover  .icon { box-shadow: 0 0 20px rgba(37,211,102,0.5); }
-.github:hover    .icon { box-shadow: 0 0 20px rgba(0,0,0,0.3); }
-.instagram:hover .icon { box-shadow: 0 0 25px rgba(221,42,123,0.5); }
-
-/* TEXT */
-.label   { font-weight: 600; }
-.subtext { font-size: 13px; color: #64748b; margin-top: 5px; }
-
-/* FLOAT BUTTON */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 24px;
-    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
-    transition: transform 0.2s;
-}
-.whatsapp-float:hover { transform: scale(1.1); }
-
-/* ANIMATION */
-@keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; text-align: center; }
-    .nav-links { margin-top: 10px; }
-    .nav-links a { display: inline-block; margin: 8px; }
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | VishOmics</title>
+<meta name="description" content="Get in touch with Vishal Chanda, computational biologist in Bengaluru. Email, WhatsApp, LinkedIn, GitHub, ORCID, Google Scholar and ResearchGate.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070d'/%3E%3Cpath d='M17 17 L32 46 L47 17' fill='none' stroke='%2322d3ee' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='46' r='4.5' fill='%238b5cf6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<noscript><style>.rv{opacity:1;transform:none}.acc-body,.skill-body{max-height:none}</style></noscript>
 </head>
 <body>
 
-<div class="navbar">
-  <b>VirexaAnalytics</b>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress"></div>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="aurora a1" aria-hidden="true"></div>
+<div class="aurora a2" aria-hidden="true"></div>
+<div class="grid-veil" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+        <path d="M20 6.5 L20 37.5 M6.6 14.25 L33.4 29.75 M33.4 14.25 L6.6 29.75" stroke="rgba(34,211,238,.3)" stroke-width="1"/>
+        <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+        <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+        <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+      </svg>
+      <span>Vish<b>Omics</b></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="contact.html">Get in touch</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-</div>
+</header>
 
-<div class="container">
-  <h1>Contact</h1>
-  <p class="subtitle">Reach out for research support, writing, or collaboration</p>
+<main id="main" class="shell">
 
-  <div class="contact-grid">
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumb rv"><a href="index.html">Home</a><i>/</i>Contact</div>
+      <h1 class="rv d1">Get in touch</h1>
+      <p class="lede rv d2">
+        Bengaluru, India. Open to computational biologist roles, postdoctoral positions,
+        collaborations on antiviral discovery, and questions about any of the open source tools.
+        Email and WhatsApp are the fastest routes.
+      </p>
+    </div>
+  </section>
 
-    <!-- EMAIL — Lucide, solid color via CSS -->
-    <a href="mailto:vishalchanda.reva@gmail.com" class="contact-card email">
-      <div class="icon"><i data-lucide="mail"></i></div>
-      <div class="label">Email</div>
-      <div class="subtext">Send a detailed query</div>
-    </a>
-
-    <!-- CALL — Lucide, solid color via CSS -->
-    <a href="tel:+919148044376" class="contact-card call">
-      <div class="icon"><i data-lucide="phone"></i></div>
-      <div class="label">Call</div>
-      <div class="subtext">Direct discussion</div>
-    </a>
-
-    <!-- WHATSAPP — self-contained inline SVG; gradient defined + used inside the same <svg> -->
-    <a href="https://wa.me/919148044376" class="contact-card whatsapp">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
-             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="waGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#25D366"/>
-              <stop offset="100%" stop-color="#128C7E"/>
-            </linearGradient>
-          </defs>
-          <path stroke="url(#waGrad)" stroke-width="1.8"
-            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7
-               8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8
-               8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5
-               a8.48 8.48 0 0 1 8 8v.5z"/>
-        </svg>
+  <section class="section tight">
+    <div class="wrap">
+      <div class="btn-row rv" style="margin-bottom:34px">
+        <a class="btn btn-primary" href="mailto:vishalchanda.reva@gmail.com?subject=Hello%20from%20your%20site">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          Send an email
+        </a>
+        <a class="btn btn-ghost" href="https://wa.me/919148044376" target="_blank" rel="noopener" style="border-color:rgba(37,211,102,.45)">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color:#25d366"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          Message on WhatsApp
+        </a>
+        <button class="btn btn-ghost" type="button" data-copy="vishalchanda.reva@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy email address
+        </button>
       </div>
-      <div class="label">WhatsApp</div>
-      <div class="subtext">Fastest response</div>
-    </a>
 
-    <!-- GITHUB — self-contained inline SVG; gradient defined + used inside the same <svg> -->
-    <a href="https://github.com/Vishu1197" target="_blank" class="contact-card github">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
-             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="ghGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#4b5563"/>
-              <stop offset="100%" stop-color="#111827"/>
-            </linearGradient>
-          </defs>
-          <path stroke="url(#ghGrad)" stroke-width="1.8"
-            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61
-               c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77
-               5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0
-               C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77
-               a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7
-               A3.37 3.37 0 0 0 9 18.13V22"/>
-        </svg>
+      <div class="contact-grid rv d1">
+
+        <a class="ctile" href="mailto:vishalchanda.reva@gmail.com">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          </span>
+          <span>
+            <b>Email</b>
+            <span>vishalchanda.reva@gmail.com</span>
+          </span>
+        </a>
+
+        <a class="ctile wa" href="https://wa.me/919148044376" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          </span>
+          <span>
+            <b>WhatsApp</b>
+            <span>+91 91480 44376</span>
+          </span>
+        </a>
+
+        <a class="ctile li" href="https://www.linkedin.com/in/vishal-chanda-2b1053a6" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9Z"/></svg>
+          </span>
+          <span>
+            <b>LinkedIn</b>
+            <span>vishal-chanda-2b1053a6</span>
+          </span>
+        </a>
+
+        <a class="ctile gh" href="https://github.com/Vishu1197" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+          </span>
+          <span>
+            <b>GitHub</b>
+            <span>github.com/Vishu1197</span>
+          </span>
+        </a>
+
+        <a class="ctile or" href="https://orcid.org/0000-0002-1646-6329" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 8v8M8 5.6h.01M12 9h2.5a3.5 3.5 0 0 1 0 7H12V9Z"/></svg>
+          </span>
+          <span>
+            <b>ORCID</b>
+            <span>0000-0002-1646-6329</span>
+          </span>
+        </a>
+
+        <a class="ctile gs" href="https://scholar.google.com/citations?user=gdA8TAIAAAAJ" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+          </span>
+          <span>
+            <b>Google Scholar</b>
+            <span>Citations and metrics</span>
+          </span>
+        </a>
+
+        <a class="ctile rg" href="https://www.researchgate.net/profile/Vishal-Chanda" target="_blank" rel="noopener">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 16V9h3a2.5 2.5 0 0 1 0 5H8m5 2-3-3"/></svg>
+          </span>
+          <span>
+            <b>ResearchGate</b>
+            <span>Vishal-Chanda</span>
+          </span>
+        </a>
+
+        <div class="ctile" style="cursor:default">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span>
+            <b>Based in</b>
+            <span>Bengaluru, Karnataka, India</span>
+          </span>
+        </div>
+
       </div>
-      <div class="label">GitHub</div>
-      <div class="subtext">View projects</div>
-    </a>
+    </div>
+  </section>
 
-    <!-- INSTAGRAM — self-contained inline SVG; gradient defined + used inside the same <svg> -->
-    <a href="https://instagram.com/virexaanalytics" target="_blank" class="contact-card instagram">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="none"
-             stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%"   stop-color="#f58529"/>
-              <stop offset="50%"  stop-color="#dd2a7b"/>
-              <stop offset="100%" stop-color="#8134af"/>
-            </linearGradient>
-          </defs>
-          <!-- Outer rounded square -->
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#igGrad)" stroke-width="1.8"/>
-          <!-- Lens circle -->
-          <circle cx="12" cy="12" r="4" stroke="url(#igGrad)" stroke-width="1.8"/>
-          <!-- Dot — filled directly, no stroke needed -->
-          <circle cx="17.5" cy="6.5" r="1" fill="#dd2a7b"/>
-        </svg>
+  <!-- ==================================================== what to ask -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Worth writing about</span>
+        <h2 class="h2">Things I am glad to hear from you on</h2>
       </div>
-      <div class="label">Instagram</div>
-      <div class="subtext">Latest updates</div>
-    </a>
 
+      <div class="card-grid">
+        <article class="card rv d1">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          </div>
+          <h3 class="h3">Roles and positions</h3>
+          <p>
+            Computational biologist positions in industry, and postdoctoral research in antiviral
+            discovery, structure based drug design or translational biotechnology.
+          </p>
+        </article>
+
+        <article class="card rv d2">
+          <div class="card-ico v">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          </div>
+          <h3 class="h3">Collaboration</h3>
+          <p>
+            Joint work on dengue and arboviral antivirals, docking and molecular dynamics campaigns,
+            transcriptomic analysis, or nanoparticle formulation for delivery.
+          </p>
+        </article>
+
+        <article class="card rv d3">
+          <div class="card-ico a">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="h3">The software</h3>
+          <p>
+            Bugs, feature requests or questions about DockPred, DockMate, GridMate, DynaMate,
+            BioSimBench and the rest. GitHub issues work too, and they are easier to track.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+            <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+            <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+            <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+          </svg>
+          <span>Vish<b>Omics</b></span>
+        </a>
+        <p class="foot-blurb">Computational biology for antiviral discovery. Built and maintained by Vishal Chanda, Bengaluru, India.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Vishu1197" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/vishal-chanda-2b1053a6" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0000-0002-1646-6329" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=gdA8TAIAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.researchgate.net/profile/Vishal-Chanda" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span data-year>2026</span> Vishal Chanda &middot; VishOmics</span>
+      <span>Built with plain HTML, CSS and JavaScript</span>
+    </div>
   </div>
-</div>
+</footer>
 
-<a href="https://wa.me/919148044376" class="whatsapp-float">💬</a>
-
-<script>
-  lucide.createIcons();
-</script>
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

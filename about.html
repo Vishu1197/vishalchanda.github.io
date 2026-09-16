@@ -1,253 +1,425 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>About - VirexaAnalytics</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(120deg, #eef2f7, #dbeafe);
-    color: #1e293b;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
-}
-
-.nav-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #1e293b;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.hero h1 {
-    font-size: 34px;
-}
-
-.subtitle {
-    color: #64748b;
-}
-
-.profile {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    background: rgba(255,255,255,0.6);
-    padding: 30px;
-    border-radius: 15px;
-}
-
-.profile img {
-    width: 120px;
-    border-radius: 50%;
-}
-
-.profile p {
-    text-align: justify;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-around;
-    margin: 40px 0;
-    text-align: center;
-}
-
-.stat {
-    font-weight: bold;
-}
-
-.section {
-    background: rgba(255,255,255,0.6);
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-}
-
-.icon-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 20px;
-}
-
-.icon-card {
-    background: rgba(255,255,255,0.7);
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.timeline {
-    border-left: 3px solid #2563eb;
-    padding-left: 20px;
-}
-
-.timeline div {
-    margin-bottom: 20px;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-}
-
-.portfolio-card {
-    background: rgba(255,255,255,0.7);
-    padding: 20px;
-    border-radius: 12px;
-}
-
-.pub-card {
-    background: rgba(255,255,255,0.7);
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-}
-
-.pub-card a {
-    text-decoration: none;
-    color: #2563eb;
-}
-
-@media (max-width: 768px) {
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }
-    .stats {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | VishOmics</title>
+<meta name="description" content="Background, experience, education, technical skills and certifications of Vishal Chanda, computational biologist and doctoral researcher at REVA University.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070d'/%3E%3Cpath d='M17 17 L32 46 L47 17' fill='none' stroke='%2322d3ee' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='46' r='4.5' fill='%238b5cf6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<noscript><style>.rv{opacity:1;transform:none}.acc-body,.skill-body{max-height:none}</style></noscript>
 </head>
-
 <body>
 
-<div class="navbar">
-<b>VirexaAnalytics</b>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="progress"></div>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="aurora a1" aria-hidden="true"></div>
+<div class="aurora a2" aria-hidden="true"></div>
+<div class="grid-veil" aria-hidden="true"></div>
 
-<div class="container">
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+        <path d="M20 6.5 L20 37.5 M6.6 14.25 L33.4 29.75 M33.4 14.25 L6.6 29.75" stroke="rgba(34,211,238,.3)" stroke-width="1"/>
+        <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+        <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+        <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+      </svg>
+      <span>Vish<b>Omics</b></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="contact.html">Get in touch</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-<div class="hero">
-<h1>About Virexa Analytics</h1>
-<p class="subtitle">Research-Driven Bioinformatics & Scientific Support</p>
-</div>
+<main id="main" class="shell">
 
-<div class="profile">
-<img src="your-image.jpg">
-<p>
-Virexa Analytics is a research-focused platform dedicated to supporting life science scholars in bioinformatics, computational drug discovery, and scientific communication. 
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumb rv"><a href="index.html">Home</a><i>/</i>About</div>
+      <h1 class="rv d1">The background</h1>
+      <p class="lede rv d2">
+        Doctoral researcher in biotechnology with a practice that runs from a docking grid box to a
+        cell culture plate. The common thread is dengue, and the belief that a computational hit is
+        only worth something once somebody has tried to break it at the bench.
+      </p>
+    </div>
+  </section>
 
-With expertise in RNA-seq analysis, molecular docking, and molecular dynamics simulation, the focus is on transforming complex biological data into meaningful insights and publication-ready results.
-</p>
-</div>
+  <!-- ======================================================== summary -->
+  <section class="section tight">
+    <div class="wrap">
+      <div class="card-grid two">
+        <article class="card rv">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2Z"/><path d="M9 22h6"/></svg>
+          </div>
+          <h3 class="h3">How I work</h3>
+          <p>
+            I combine in silico and in vitro approaches rather than treating them as separate
+            disciplines. A screening campaign that never leaves the computer is a hypothesis, not a
+            result, so every promising candidate in my work is carried through molecular dynamics,
+            binding free energy analysis, ADMET profiling and then an actual antiviral assay.
+          </p>
+        </article>
 
-<div class="stats">
-<div class="stat">10+ Projects</div>
-<div class="stat">PhD-Level Expertise</div>
-<div class="stat">End-to-End Research Support</div>
-</div>
+        <article class="card rv d1">
+          <div class="card-ico v">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <h3 class="h3">What I am looking for</h3>
+          <p>
+            A computational biologist role where the modelling is answerable to experiment.
+            Antiviral therapeutics, structure based drug design, translational biotechnology. I am
+            equally open to industry positions and to postdoctoral research, and I expect to
+            complete the doctorate in 2027.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>What We Support</h2>
+  <!-- ===================================================== experience -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Experience</span>
+        <h2 class="h2">Where the work has happened</h2>
+      </div>
 
-<div class="icon-grid">
-<div class="icon-card">🧬 RNA-seq & Microarray Analysis</div>
-<div class="icon-card">⚛️ Molecular Docking & Dynamics</div>
-<div class="icon-card">🤖 AI-based Drug Discovery</div>
-<div class="icon-card">📊 Data → Publication Workflow</div>
-</div>
+      <div class="tl rv d1">
+        <div class="tl-item">
+          <div class="tl-when">Nov 2022 &rarr; Present</div>
+          <h3>Doctoral Researcher</h3>
+          <div class="tl-where">REVA University, Bengaluru, India</div>
+          <ul>
+            <li>Research on dengue viruses, focused on antiviral discovery and virus host interactions.</li>
+            <li>Developed a machine learning and molecular dynamics approach to identify natural antiviral candidates against dengue virus, published in a peer reviewed journal.</li>
+            <li>Analyse transcriptomic data to study dengue associated gene expression, pathways and regulatory networks involved in disease progression and thrombocytopenia.</li>
+            <li>Develop lipid based nanoparticles for targeted antiviral drug delivery and evaluate their biological activity through in vitro studies.</li>
+            <li>Published 3 research articles and 2 book chapters, filed 1 patent, and presented at conferences including Best Oral Presentation, Ph.D. Scholar Category, SwaLife Biotech 2026.</li>
+          </ul>
+        </div>
 
-</div>
+        <div class="tl-item">
+          <div class="tl-when">Jan 2020 &rarr; Mar 2020</div>
+          <h3>Project Intern</h3>
+          <div class="tl-where">BRIC National Institute of Plant Genome Research (NIPGR), New Delhi, India</div>
+          <ul>
+            <li>Analysed next generation sequencing data to identify and characterise viral signatures within the human microbiome.</li>
+            <li>Performed genomic sequence annotation and taxonomic classification using established bioinformatics tools and pipelines.</li>
+            <li>Interpreted high throughput sequencing datasets for biological data validation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>Approach</h2>
-<p>
-The focus is not just data processing, but delivering biologically meaningful interpretation, mechanistic insights, and scientifically valid outputs suitable for publication and research advancement.
-</p>
-</div>
+  <!-- ====================================================== education -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Education</span>
+        <h2 class="h2">Training</h2>
+      </div>
 
-<div class="section">
-<h2>Research Integrity</h2>
-<p>
-All research support is provided with strict confidentiality and adherence to academic standards. Researchers are guided through analysis and interpretation to ensure clarity, understanding, and ethical use of results.
-</p>
-</div>
+      <div class="tl rv d1">
+        <div class="tl-item">
+          <div class="tl-when">2022 &rarr; Present</div>
+          <h3>Ph.D. Biotechnology</h3>
+          <div class="tl-where">REVA University, Bengaluru</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">2018 &rarr; 2020</div>
+          <h3>M.Sc. Biotechnology</h3>
+          <div class="tl-where">REVA University, Bengaluru</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-when">2015 &rarr; 2018</div>
+          <h3>B.Sc. Biotechnology, Biochemistry and Genetics</h3>
+          <div class="tl-where">SFGC, Bangalore University</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>Journey</h2>
-<div class="timeline">
-<div>🎓 PhD Research in Biotechnology</div>
-<div>🧬 Specialization in RNA-seq & Computational Biology</div>
-<div>📄 Research Publications & Scientific Contributions</div>
-<div>🚀 Establishment of Virexa Analytics</div>
-</div>
-</div>
+  <!-- ========================================================= skills -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Technical</span>
+        <h2 class="h2">Skills matrix</h2>
+        <p class="lede">Click any category to open it.</p>
+      </div>
 
-<div class="section">
-<h2>Case Areas</h2>
+      <div class="rv d1">
 
-<div class="portfolio-grid">
-<div class="portfolio-card">
-<h3>RNA-seq Analysis</h3>
-<p>Differential expression & pathway insights</p>
-</div>
+        <div class="skill-panel open">
+          <button class="skill-head" type="button" aria-expanded="true">
+            Computational biology and drug discovery
+            <span class="ct">8</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag c">Molecular docking</span>
+              <span class="tag c">Molecular dynamics</span>
+              <span class="tag c">Virtual screening</span>
+              <span class="tag c">Structure based drug discovery</span>
+              <span class="tag c">Protein ligand interaction analysis</span>
+              <span class="tag c">Binding free energy analysis</span>
+              <span class="tag c">ADMET profiling</span>
+              <span class="tag c">Drug likeness evaluation</span>
+            </div>
+          </div>
+        </div>
 
-<div class="portfolio-card">
-<h3>Molecular Docking</h3>
-<p>Protein-ligand interaction analysis</p>
-</div>
+        <div class="skill-panel">
+          <button class="skill-head" type="button" aria-expanded="false">
+            Bioinformatics and omics
+            <span class="ct">10</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag v">RNA-Seq analysis</span>
+              <span class="tag v">Microarray analysis</span>
+              <span class="tag v">Differential gene expression</span>
+              <span class="tag v">Transcriptomics</span>
+              <span class="tag v">Pathway enrichment</span>
+              <span class="tag v">GSEA</span>
+              <span class="tag v">Gene regulatory network analysis</span>
+              <span class="tag v">NGS data analysis</span>
+              <span class="tag v">Sequence annotation</span>
+              <span class="tag v">Taxonomic classification</span>
+            </div>
+          </div>
+        </div>
 
-<div class="portfolio-card">
-<h3>MD Simulation</h3>
-<p>Stability and conformational validation</p>
-</div>
-</div>
+        <div class="skill-panel">
+          <button class="skill-head" type="button" aria-expanded="false">
+            AI and machine learning
+            <span class="ct">7</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag g">Feedforward neural networks</span>
+              <span class="tag g">Random forest</span>
+              <span class="tag g">K-nearest neighbours</span>
+              <span class="tag g">Ensemble learning</span>
+              <span class="tag g">Hybrid ML models</span>
+              <span class="tag g">Principal component analysis</span>
+              <span class="tag g">Model validation</span>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="skill-panel">
+          <button class="skill-head" type="button" aria-expanded="false">
+            Programming and data analysis
+            <span class="ct">9</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag c">Python</span>
+              <span class="tag c">R</span>
+              <span class="tag c">Bash and shell</span>
+              <span class="tag">Statistical analysis</span>
+              <span class="tag">Data interpretation</span>
+              <span class="tag">Data visualisation</span>
+              <span class="tag c">Pandas</span>
+              <span class="tag c">NumPy</span>
+              <span class="tag c">scikit-learn</span>
+            </div>
+          </div>
+        </div>
 
-<div class="section">
-<h2>Publications</h2>
+        <div class="skill-panel">
+          <button class="skill-head" type="button" aria-expanded="false">
+            Computational tools
+            <span class="ct">7</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag a">GROMACS</span>
+              <span class="tag a">AutoDock Vina</span>
+              <span class="tag a">UCSF Chimera</span>
+              <span class="tag a">AmberTools</span>
+              <span class="tag a">MM-PBSA / MM-GBSA</span>
+              <span class="tag a">ADMETLab 3.0</span>
+              <span class="tag a">Marvin (ChemAxon)</span>
+            </div>
+          </div>
+        </div>
 
-<div class="pub-card">
-<a href="https://link.springer.com/article/10.1007/s13721-025-00670-7" target="_blank">
-Springer Publication →
-</a>
-</div>
+        <div class="skill-panel">
+          <button class="skill-head" type="button" aria-expanded="false">
+            Virology and nanobiotechnology
+            <span class="ct">6</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag v">Lipid nanoparticle formulation</span>
+              <span class="tag v">Polymeric nanoparticle formulation</span>
+              <span class="tag v">Virus host interaction studies</span>
+              <span class="tag v">Cell culture</span>
+              <span class="tag v">TCID50</span>
+              <span class="tag v">Plaque assay</span>
+              <span class="tag v">Virus neutralisation assays</span>
+            </div>
+          </div>
+        </div>
 
-<div class="pub-card">
-<a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003387893-2/obsessive-compulsive-disorder-vishal-chanda-senthilkumar-rajagopal-yuvashree-muralidaran" target="_blank">
-Taylor & Francis Chapter →
-</a>
-</div>
+        <div class="skill-panel">
+          <button class="skill-head" type="button" aria-expanded="false">
+            Scientific and professional
+            <span class="ct">6</span>
+            <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="skill-body">
+            <div class="tags">
+              <span class="tag">Scientific writing</span>
+              <span class="tag">Research communication</span>
+              <span class="tag">Scientific literature review</span>
+              <span class="tag">Data driven problem solving</span>
+              <span class="tag">Interdisciplinary collaboration</span>
+              <span class="tag">Research project management</span>
+            </div>
+          </div>
+        </div>
 
-</div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- ================================================ certs and award -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow">Recognition</span>
+        <h2 class="h2">Certifications and awards</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="card rv d1" style="border-color:rgba(251,191,36,.3)">
+          <div class="card-ico a">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
+          </div>
+          <h3 class="h3">Best Oral Presentation</h3>
+          <p>
+            Ph.D. Scholar Category, International Conference on Artificial Intelligence in Drug
+            Discovery and Development, SwaLife Biotech, April 2026.
+          </p>
+        </article>
+
+        <article class="card rv d2">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+          </div>
+          <h3 class="h3">Basic Virology Techniques</h3>
+          <p>
+            Manipal Institute of Virology, MAHE. Grade A+, 2 credits, November 2023.
+          </p>
+        </article>
+
+        <article class="card rv d3">
+          <div class="card-ico v">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+          </div>
+          <h3 class="h3">Clinical Data Management</h3>
+          <p>Biotechnika Pvt. Ltd., 2021.</p>
+        </article>
+
+        <article class="card rv d4">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 4H8l1-4Z"/><path d="M8 7v9a4 4 0 0 0 8 0V7"/><path d="M6 21h12"/></svg>
+          </div>
+          <h3 class="h3">Cell Culture Technologies</h3>
+          <p>NPTEL, IIT Kanpur, 2019.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="cta rv">
+        <h2 class="h2">Want the detail?</h2>
+        <p>The publication record, the software and the research programme each have a page of their own.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="research.html">Research programme</a>
+          <a class="btn btn-ghost" href="publications.html">Publications</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6.5 L33.4 14.25 L33.4 29.75 L20 37.5 L6.6 29.75 L6.6 14.25 Z" stroke="rgba(148,163,184,.4)" stroke-width="1.2"/>
+            <circle cx="20" cy="6.5" r="3.3" fill="#22d3ee"/><circle cx="33.4" cy="14.25" r="3.3" fill="#8b5cf6"/>
+            <circle cx="33.4" cy="29.75" r="3.3" fill="#22d3ee"/><circle cx="20" cy="37.5" r="3.3" fill="#34d399"/>
+            <circle cx="6.6" cy="29.75" r="3.3" fill="#8b5cf6"/><circle cx="6.6" cy="14.25" r="3.3" fill="#22d3ee"/>
+          </svg>
+          <span>Vish<b>Omics</b></span>
+        </a>
+        <p class="foot-blurb">Computational biology for antiviral discovery. Built and maintained by Vishal Chanda, Bengaluru, India.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="software.html">Software</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://github.com/Vishu1197" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/vishal-chanda-2b1053a6" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0000-0002-1646-6329" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=gdA8TAIAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.researchgate.net/profile/Vishal-Chanda" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span data-year>2026</span> Vishal Chanda &middot; VishOmics</span>
+      <span>Built with plain HTML, CSS and JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
